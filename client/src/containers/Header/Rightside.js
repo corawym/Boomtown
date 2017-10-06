@@ -5,8 +5,8 @@ class Rightside extends Component {
   render() {
     return (
       <div>
-        {/*<ButtonLogOut />
-        <ButtonMyProfile />*/}
+        <ButtonMyProfile />
+        <ButtonLogOut />
       </div>
     )
   }
