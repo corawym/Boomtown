@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import { ButtonLogOut, ButtonMyProfile } from '../../components/common'
 
 class Rightside extends Component {
-  state = {  }
   render() {
     return (
       <div>
+        {/*<ButtonLogOut />
+        <ButtonMyProfile />*/}
       </div>
-    );
+    )
   }
 }
 
-export default Rightside;
+export default Rightside

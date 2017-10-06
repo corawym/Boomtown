@@ -14,4 +14,4 @@ class LogoBoom extends Component {
   }
 }
 
-export default LogoBoom;
+export default LogoBoom

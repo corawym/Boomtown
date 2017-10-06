@@ -3,15 +3,17 @@ import React, { Component } from 'react'
 import { LogoBoom, FilterMenu } from '../../components/common'
 
 class Leftside extends Component {
-  state = {  }
   render() {
+
+    const { filterSelected, filters, handleChange } = this.props
+
     return (
       <div className="headerLeftWrapper">
         <LogoBoom />
-        <FilterMenu />
+        <FilterMenu filters={filters} handleChange={handleChange} filterSelected={filterSelected}/>
       </div>
     )
   }
 }
 
-export default Leftside;
+export default Leftside

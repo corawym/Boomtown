@@ -1,9 +1,6 @@
-/*.headerLogo img{
-  height: 36px;
-  margin: 12px 24px;
-}*/
 .headerLeftWrapper {
-
+  display: flex;
+  align-items: center;
 }
 
 .headerLeftWrapper .logoSize{
@@ -11,8 +8,17 @@
   width: auto;
 }
 
+.logoWrapper {
+  margin-right: 20px;
+}
+
 .logoWrapper a{
   line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.filterMenuWrapper{
   display: flex;
   align-items: center;
 }

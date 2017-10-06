@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
-
 import { AppBar } from 'material-ui'
 
 import { Leftside, Rightside } from './index'
 
 import './styles.css'
 
-// import FilterDropDownMenu from '../../components/FilterDropDownMenu';
-// import ButtonsCollection from '../../components/ButtonsCollection';
-
-
-
 
 class Header extends Component {
+
+
   state = { 
     filters: [
       { id: 1, name: "Electronics" },
@@ -23,19 +19,24 @@ class Header extends Component {
       { id: 6, name: "Sporting Goods" },
       { id: 7, name: "Tools" }
     ],
-    filterSelected: null 
+    filterSelected: [] 
    }
+
+   handleChange = (event, index, value) => {
+     this.setState({filterSelected: value})
+   }
+
   render() {
     return (
       <AppBar
         title="Title"
-        iconElementLeft={ <Leftside filters={this.state.filters} filterSelected={this.state.filterSelected}/> }
+        iconElementLeft={ <Leftside filters={this.state.filters}  handleChange={this.handleChange} filterSelected={this.state.filterSelected}/> }
         iconElementRight={ <Rightside /> }
-        style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0'}}
-        iconStyleLeft={{ margin: '0', height: '64px', display: 'flex', alignItems: 'center'}}
+        style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0', display:'flex', alignItems:'center'}}
+        iconStyleLeft={{ margin: '0'}}
       />
-    );
+    )
   }
 }
 
-export default Header;
+export default Header
