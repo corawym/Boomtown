@@ -2,17 +2,16 @@ import React, { Component } from 'react'
 
 import logo from '../../images/boomtown-logo.svg'
 
-class LogoHeader extends Component {
-  state = {  }
+class LogoBoom extends Component {
   render() {
     return (
-      <div>
+      <div className="logoWrapper">
         <a href="/">
-          <img src={logo} alt="Boomtown Logo" />
+          <img src={logo} alt="Boomtown Logo" className="logoSize"/>
         </a>
       </div>
-    );
+    )
   }
 }
 
-export default LogoHeader;
+export default LogoBoom;

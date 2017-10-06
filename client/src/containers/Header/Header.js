@@ -31,7 +31,8 @@ class Header extends Component {
         title="Title"
         iconElementLeft={ <Leftside filters={this.state.filters} filterSelected={this.state.filterSelected}/> }
         iconElementRight={ <Rightside /> }
-        style={{ backgroundColor: '#fff' }}
+        style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0'}}
+        iconStyleLeft={{ margin: '0', height: '64px', display: 'flex', alignItems: 'center'}}
       />
     );
   }

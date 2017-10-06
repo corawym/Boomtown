@@ -2,3 +2,17 @@
   height: 36px;
   margin: 12px 24px;
 }*/
+.headerLeftWrapper {
+
+}
+
+.headerLeftWrapper .logoSize{
+  height: 36px;
+  width: auto;
+}
+
+.logoWrapper a{
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
