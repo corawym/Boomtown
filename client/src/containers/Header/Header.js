@@ -10,7 +10,7 @@ import './styles.css'
 // import ButtonsCollection from '../../components/ButtonsCollection';
 
 
-// import logo from '../../images/boomtown-logo.svg';
+
 
 class Header extends Component {
   state = { 
