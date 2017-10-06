@@ -6,7 +6,6 @@ class ButtonLogOut extends Component {
     return (
       <RaisedButton
         label="Logout"
-        labelColor="white"
         secondary
         style={{marginLeft: '12px'}}
       />
