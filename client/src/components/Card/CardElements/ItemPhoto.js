@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { CardMedia, CardTitle } from 'material-ui/Card'
 
 class ItemPhoto extends Component {
-  state = {  }
   render() {
+    const {imageUrl, available} = this.props
     return (
       <CardMedia
-        overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+        overlay={!available?<CardTitle subtitle="Unavailable" />:false}
         >
-        <img src="images/nature-600-337.jpg" alt="" />
+        <img src={imageUrl} alt="" />
       </CardMedia>
     )
   }

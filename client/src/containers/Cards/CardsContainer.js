@@ -33,7 +33,7 @@ class CardsContainer extends Component {
   render() {
     return (
       <div className="cardsContainer">
-        <CardList />
+        <CardList cardData={this.state.cardData}/>
       </div>
     )
   }

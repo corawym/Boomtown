@@ -5,14 +5,19 @@ import { ItemCard } from '../../components/Card'
 import './styles.css'
 
 class CardList extends Component {
-  state = {  }
+
   render() {
+
+    const {cardData} = this.props
+
     return (
       <div className="cardList"> 
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+        {cardData.map(item => 
+          <ItemCard 
+            key={item.id}
+            data={item}
+          />
+        )}
       </div>
     )
   }
