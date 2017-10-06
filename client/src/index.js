@@ -7,7 +7,7 @@ import './index.css';
 import muiTheme from './config/theme';
 
 import Layout from './components/Layout';
-import Login from './containers/Login';
+// import Login from './containers/Login';
 
 const Boomtown = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
