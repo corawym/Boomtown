@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { CardList } from './index'
-import { ButtonAddItem } from '../../components/Card/CardElements'
+import { ButtonAddItem } from '../../components/common'
 
 class CardsContainer extends Component {
   state = { cardData:[] }

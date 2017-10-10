@@ -15,7 +15,7 @@ const Boomtown = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
         <Layout>
             {/*<Login />*/}
-            {/*<CardsContainer />*/}
+            <CardsContainer />
             <Profile />
         </Layout>
     </MuiThemeProvider>
