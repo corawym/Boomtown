@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { CardList } from './index'
+import { ButtonAddItem } from '../../components/Card/CardElements'
 
 class CardsContainer extends Component {
   state = { cardData:[] }
@@ -35,9 +36,12 @@ class CardsContainer extends Component {
   
   render() {
     return (
-      <div className="cardsContainer">
-        <CardList cardData={this.state.cardData}/>
-      </div>
+        <div className="cardsContainer">
+          <CardList cardData={this.state.cardData}/>
+          <div className="buttonAddContainer">
+              <ButtonAddItem />
+          </div> 
+        </div>
     )
   }
 }

@@ -10,3 +10,15 @@
   margin-top: 16px;
   margin-bottom: 16px;
 }
+
+
+.buttonAddContainer {
+  z-index: 100;
+  position: fixed;
+  bottom: 20px;
+  right: 2rem;
+}
+
+.buttonAddWrapper{
+
+}

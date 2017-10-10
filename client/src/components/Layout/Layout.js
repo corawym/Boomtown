@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Header } from '../../containers/Header';
 
+
+
 import './styles.css';
 
 const Layout = ({ children }) => (
@@ -15,6 +17,7 @@ const Layout = ({ children }) => (
             {children}
         </div>
         {/* And a footer here, but not on the login route... */}
+        
     </div>
 );
 
