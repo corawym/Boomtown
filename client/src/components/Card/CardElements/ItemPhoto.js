@@ -7,6 +7,8 @@ class ItemPhoto extends Component {
     return (
       <CardMedia
         overlay={!available?<CardTitle subtitle="Unavailable" />:false}
+        overlayContentStyle={{paddingTop: '0'}}
+        overlayStyle={{textTransform: 'uppercase'}}
         >
         <img src={imageUrl} alt="" />
       </CardMedia>

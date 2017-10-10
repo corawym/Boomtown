@@ -4,9 +4,11 @@ import { CardList } from './index'
 
 class CardsContainer extends Component {
   state = { cardData:[] }
+
   componentDidMount(){
     this.fetchData();
   }
+
   fetchData = () => {
     const urls = [ 'http://localhost:3001/items', 'http://localhost:3001/users' ]
     Promise.all(urls.map(url =>
@@ -30,6 +32,7 @@ class CardsContainer extends Component {
       this.setState({cardData})
     })
   }
+  
   render() {
     return (
       <div className="cardsContainer">
