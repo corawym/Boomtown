@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 
-// import { ItemCard } from '../../components/Card'
+import { ItemCard } from '../../components/Card'
 
 class UserItems extends Component {
-  state = {  }
+  
   render() {
+
+    const {cardData} = this.props
+
     return (
       <div className="cardList"> 
-        {/*<ItemCard />*/}
+        {cardData.map(item => 
+          <ItemCard 
+            key={item.id}
+            data={item}
+          />
+        )}
       </div>
     )
   }

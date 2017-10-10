@@ -1,0 +1,27 @@
+.profileHeader {
+  max-width: 800px;
+  margin: 40px auto; 
+}
+
+.userPersonalInfo, .userOtherInfo {
+  flex-basis: 50%;
+}
+
+.userOtherInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profileHeader h1 {
+  font-size: 2.5rem;
+}
+
+.profileHeader h2 {
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+.subtitle {
+  color: rgba(38, 50, 56, 0.54);
+}

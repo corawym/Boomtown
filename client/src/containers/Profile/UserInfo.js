@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { ProfileCard } from '../../components/Card'
+import { ProfileCard } from '../../components/Profile'
 
 class UserInfo extends Component {
   state = {  }

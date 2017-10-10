@@ -8,14 +8,14 @@ import muiTheme from './config/theme'
 
 import Layout from './components/Layout'
 // import Login from './containers/Login'
-import { CardsContainer } from './containers/Cards'
+// import { CardsContainer } from './containers/Cards'
 import { Profile } from './containers/Profile/'
 
 const Boomtown = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
         <Layout>
             {/*<Login />*/}
-            <CardsContainer />
+            {/*<CardsContainer />*/}
             <Profile />
         </Layout>
     </MuiThemeProvider>
