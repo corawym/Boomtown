@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { Card } from 'material-ui'
+import React, { Component } from 'react';
+import { Card } from 'material-ui';
+import { Link } from 'react-router-dom';
 
-import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements'
+import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements';
 
 class ItemCard extends Component {
   render() {
@@ -11,7 +12,9 @@ class ItemCard extends Component {
       <Card style={{ width: '100%', flexBasis: '32%', marginBottom: '20px'}}>
         <ItemPhoto imageUrl={data.imageUrl} available={data.available}/>
         <div className="marginTopBottom">
-          <User user={data.user} date={data.createdOn}/>
+          <Link to={`/profile/${data.user.id}`}>
+            <User user={data.user} date={data.createdOn}/>
+          </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>
           {data.available?<ButtonBorrow />:false}
         </div>

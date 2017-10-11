@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
-import { Avatar } from 'material-ui'
 import Gravatar from 'react-gravatar'
 
 class ProfilePic extends Component {
-  state = {  }
+
   render() {
+    const {userSelect} = this.props
+
     return (
-      <div>
-      <Avatar size={180}/>
-      </div>
+      <Gravatar 
+        email={userSelect.email} 
+        size={180} 
+        style={{borderRadius:'50%', display: 'flex', justifyContent: 'center'}}
+      />
     )
   }
 }

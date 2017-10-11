@@ -7,6 +7,10 @@
   flex-basis: 50%;
 }
 
+.userPersonalInfo h1,p{
+  margin-right: 20px;
+} 
+
 .userOtherInfo {
   display: flex;
   flex-direction: row;
@@ -19,9 +23,13 @@
 
 .profileHeader h2 {
   font-size: 1.3rem;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .subtitle {
   color: rgba(38, 50, 56, 0.54);
+}
+
+.userStat {
+  margin-left: 15px;
 }

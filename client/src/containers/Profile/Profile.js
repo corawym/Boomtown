@@ -5,7 +5,7 @@ import { UserInfo, UserItems } from './index'
 import './styles.css'
 
 class Profile extends Component {
-  state = { cardData:[] }
+  state = { cardData:[], userSelect:[], itemsShared:0, itemsBorrowed:0 }
 
   componentDidMount(){
     this.fetchData();
@@ -30,15 +30,30 @@ class Profile extends Component {
           "borrower": item.borrower,
           "user": users.find(user => item.itemOwner === user.id)
         }
+      }).filter((item) => {
+        if( this.props.match.params.id === item.itemOwner ){
+          return items
+        }
       })
-      this.setState({cardData})
+      const userSelect = users.filter((user)=>{
+        if ( this.props.match.params.id === user.id){
+          return user
+        }
+      })
+      const itemsBorrowed = items.filter((item)=>{
+        if( this.props.match.params.id === item.borrower ){
+          return items
+        }
+      }).length;
+      this.setState({cardData, userSelect, itemsShared:cardData.length, itemsBorrowed})
+
     })
   }
   
   render() {
     return (
       <div>
-        <UserInfo cardData={this.state.cardData}/>
+        <UserInfo userSelect={this.state.userSelect} itemsShared={this.state.itemsShared} itemsBorrowed={this.state.itemsBorrowed}/>
         <UserItems cardData={this.state.cardData}/>
       </div>
     )
