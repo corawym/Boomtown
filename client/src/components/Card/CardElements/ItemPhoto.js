@@ -6,7 +6,7 @@ class ItemPhoto extends Component {
     const {imageUrl, available} = this.props
     return (
       <CardMedia
-        overlay={!available?<CardTitle subtitle="Unavailable" />:false}
+        overlay={!available && <CardTitle subtitle="Unavailable" />}
         overlayContentStyle={{paddingTop: '0'}}
         overlayStyle={{textTransform: 'uppercase'}}
         >

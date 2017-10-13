@@ -32,7 +32,7 @@ class Header extends Component {
         title="Title"
         iconElementLeft={ <Leftside filters={this.state.filters}  handleChange={this.handleChange} filterSelected={this.state.filterSelected}/> }
         iconElementRight={ <Rightside /> }
-        style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0', display:'flex', alignItems:'center'}}
+        style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0 10px', display:'flex', alignItems:'center'}}
         iconStyleLeft={{ margin: '0'}}
         iconStyleRight={{ margin: '0'}}
       />

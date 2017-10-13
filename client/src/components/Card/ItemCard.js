@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 
 import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements';
 
+import './styles.css';
 class ItemCard extends Component {
   render() {
     const {data} = this.props
 
     return (
-      <Card style={{ width: '100%', flexBasis: '32%', marginBottom: '20px'}}>
+      <Card className='itemCard'>
         <ItemPhoto imageUrl={data.imageUrl} available={data.available}/>
-        <div className="marginTopBottom">
-          <Link to={`/profile/${data.user.id}`}>
+        <div style={{padding:'16px 0'}}>
+          <Link to={`/profile/${data.user.id}`} className='userInfo'>
             <User user={data.user} date={data.createdOn}/>
           </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>
