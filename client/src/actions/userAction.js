@@ -6,8 +6,8 @@ const getUsersBegin = () => {
   return { type: 'GET_USERS_BEGIN' }
 }
 
-const getUsersSuccess = (users) => {
-  return { type: 'GET_USERS_SUCCESS', users}
+const getUsersSuccess = () => {
+  return { type: 'GET_USERS_SUCCESS'}
 }
 
 const getUsersError = (error) => {
@@ -21,7 +21,7 @@ export const getUsers = () => {
     dispatch(getUsersBegin())
     return fetch(`${mainURL}/users`)
       .then(resp => resp.json()) 
-      .then(users => { dispatch(getUsersSuccess(users)) }) // when promise is succeed
+      .then(users => { dispatch(getUsersSuccess()) }) // when promise is succeed
       .catch(err => { dispatch(getUsersError(err)) }) // when promise is failed
   }
 }

@@ -6,8 +6,8 @@ const getCardItemsBegin = () => {
   return { type: 'GET_CARD_ITEMS_BEGIN' }
 }
 
-const getCardItemsSuccess = (items) => {
-  return { type: 'GET_CARD_ITEMS_SUCCESS', items}
+const getCardItemsSuccess = (items, users) => {
+  return { type: 'GET_CARD_ITEMS_SUCCESS', items, users}
 }
 
 const getCardItemsError = (error) => {
@@ -25,8 +25,9 @@ export const getCardItems = async () => {
       // below is when promise is succeed
       .then(resp => resp.json()) 
       .then(items => { 
-        await getUsers()
-        dispatch(getCardItemsSuccess(items))
+        const users = await getUsers()
+        dispatch(getCardItemsSuccess(items, users))
+        return users
       })
       // below is when promise is failed
       .catch(err => { 
