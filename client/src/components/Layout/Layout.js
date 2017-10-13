@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { Header } from '../../containers/Header';
-
+import { Header } from '../../containers/Header'
+import { Footer } from '../../containers/Footer'
 
 
 import './styles.css';
@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
             {children}
         </div>
         {/* And a footer here, but not on the login route... */}
-        
+        <Footer/>
     </div>
 );
 

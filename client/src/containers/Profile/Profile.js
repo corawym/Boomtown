@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import { UserInfo, UserItems } from './index'
 
+import { ButtonAddItem } from '../../components/common'
+
 import './styles.css'
 
 class Profile extends Component {
@@ -52,9 +54,12 @@ class Profile extends Component {
   
   render() {
     return (
-      <div>
+      <div className="profileContainer">
         <UserInfo userSelect={this.state.userSelect} itemsShared={this.state.itemsShared} itemsBorrowed={this.state.itemsBorrowed}/>
         <UserItems cardData={this.state.cardData}/>
+        <div className="buttonAddContainer">
+            <ButtonAddItem />
+        </div> 
       </div>
     )
   }

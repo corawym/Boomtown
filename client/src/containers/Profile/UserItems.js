@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Masonry from 'react-masonry-component'
 
 import { ItemCard } from '../../components/Card'
 
@@ -10,12 +11,16 @@ class UserItems extends Component {
 
     return (
       <div className="cardList"> 
-        {cardData.map(item => 
-          <ItemCard 
-            key={item.id}
-            data={item}
-          />
-        )}
+        <Masonry className='masonry' elementType={'ul'}>
+          {cardData.map(item => 
+            <li>
+              <ItemCard 
+                key={item.id}
+                data={item}
+              />
+            </li>
+          )}
+        </Masonry>
       </div>
     )
   }

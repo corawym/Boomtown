@@ -12,7 +12,7 @@ class ProfileCard extends Component {
 
     return (
       <div className="profileHeader">
-        <Paper zDepth={1} style={{display: 'flex', padding: '30px'}}>
+        <Paper zDepth={1} style={{display: 'flex', padding: '50px 30px'}}>
 
           <div className="userPersonalInfo">
             <h1>{userSelect.fullName}</h1>

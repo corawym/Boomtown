@@ -6,7 +6,7 @@
 .buttonAddContainer {
   z-index: 100;
   position: fixed;
-  bottom: 20px;
+  bottom: 30px;
   right: 2rem;
 }
 
@@ -14,10 +14,7 @@
   width: 100%;
 }
 
-.masonry {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .masonry li {
   width: 33.33%;

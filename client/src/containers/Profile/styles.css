@@ -1,7 +1,14 @@
 .cardList {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.masonry li {
+  width: 33.33%;
+  padding: 10px; 
+}
+
+.profileContainer{
+  width: 100%;
+  margin: 0 auto;
 }
