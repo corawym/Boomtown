@@ -18,6 +18,7 @@ import Layout from './components/Layout'
 import Login from './containers/Login'
 import { CardsContainer } from './containers/Cards'
 import { Profile } from './containers/Profile'
+import { NotFound } from './containers/NotFound/'
 
 const Boomtown = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
@@ -28,7 +29,7 @@ const Boomtown = () => (
                     <Route path="/login" component={Login} />
                     <Route path="/profile/:id" component={Profile} />
                     {/*<Route path="/share" component={Share} />*/}
-                    {/*<Route component={NotFound} />*/}
+                    <Route component={NotFound} />
                 </Switch>
             </Layout>
         </Router>
