@@ -1,5 +1,6 @@
 const initialState = {
   users: [],
+  items:[],
   errorMsg: {},
   isLoading: false,
   filteredItems: {}
@@ -7,10 +8,19 @@ const initialState = {
 
 // helper
 const mergeUsersItems = (users, items) => {
-  return users.map(users => {
+  return users.map(user => {
     return {
-      ...users,
-      items: users.filter(item => item.itemOwner === users.id)
+      ...user,
+      items: items.filter(item => item.itemOwner === user.id)
+    }
+  })
+}
+
+const mergeItemsUsers = (items, users) => {
+  return items.map(item => {
+    return {
+      ...item,
+      user: users.find(user => item.itemOwner === user.id)
     }
   })
 }
@@ -32,7 +42,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        users: mergeUsersItems(action.users, action.items)
+        users: mergeUsersItems(action.users, action.items),
+        items: mergeItemsUsers(action.items, action.users)
       }
     case 'GET_USERS_ERROR':
     case 'GET_CARD_ITEMS_ERROR':

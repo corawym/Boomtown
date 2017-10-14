@@ -13,7 +13,7 @@ class ItemCard extends Component {
       <Card className='itemCard'>
         <ItemPhoto imageUrl={data.imageUrl} available={data.available}/>
         <div style={{padding:'16px 0'}}>
-          <Link to={`/profile/${data.user.id}`} className='userInfo'>
+          <Link to={`/profile/${data.id}`} className='userInfo'>
             <User user={data.user} date={data.createdOn}/>
           </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>

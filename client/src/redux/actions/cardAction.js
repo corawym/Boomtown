@@ -1,5 +1,5 @@
 import { mainURL } from '../constants'
-import { getUsers} from './userAction'
+import { getUsers } from './userAction'
 
 // action creators
 const getCardItemsBegin = () => {
@@ -7,7 +7,7 @@ const getCardItemsBegin = () => {
 }
 
 const getCardItemsSuccess = (items, users) => {
-  return { type: 'GET_CARD_ITEMS_SUCCESS', items, users}
+  return { type: 'GET_CARD_ITEMS_SUCCESS', items, users }
 }
 
 const getCardItemsError = (error) => {
@@ -16,7 +16,7 @@ const getCardItemsError = (error) => {
 
 
 // functions
-export const getCardItems = async () => {
+export const getCardItems = () => {
   return (dispatch) => {
     dispatch(getCardItemsBegin())
 
@@ -25,9 +25,9 @@ export const getCardItems = async () => {
       // below is when promise is succeed
       .then(resp => resp.json()) 
       .then(items => { 
-        const users = await getUsers()
-        dispatch(getCardItemsSuccess(items, users))
-        return users
+        return getUsers(dispatch).then(users => {
+          dispatch(getCardItemsSuccess(items, users))
+        })
       })
       // below is when promise is failed
       .catch(err => { 

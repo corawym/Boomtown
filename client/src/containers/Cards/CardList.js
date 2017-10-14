@@ -14,14 +14,14 @@ class CardList extends Component {
     return (
       <div className="cardList"> 
         <Masonry className='masonry' elementType={'ul'}>
-          {cardData.map(item => 
+          { cardData.length !== 0 ? cardData.map(items => 
             <li>
               <ItemCard 
-                key={item.id}
-                data={item}
+                key={items.id}
+                data={items}
               />
             </li>
-          )}
+          ): '' }
         </Masonry>
       </div>
     )

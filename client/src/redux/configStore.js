@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
 
-const configStore = ( initialState ) =>{
+const configStore = ( initialState ) => {
   const middleware = process.env.NODE_ENV !== 'production' ? [thunk, createLogger()] : [ thunk ]
   const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
   const store = createStoreWithMiddleware(rootReducer, initialState) 
+  return store
 }
+
 export default configStore;
 
 
