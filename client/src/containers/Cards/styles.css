@@ -19,6 +19,20 @@
 }
 
 .masonry li {
-  width: 33.33%;
+  width: 100%;
   padding: 10px; 
+}
+
+/* Tablet view */
+@media screen and (min-width: 560px) {
+  .masonry li {
+    width: 50%;
+  }
+}
+
+/* Desktop view */
+@media screen and (min-width: 960px) {
+  .masonry li {
+    width: 33.33%;
+  }
 }
