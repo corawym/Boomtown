@@ -5,7 +5,7 @@
 }
 
 .userPersonalInfo, .userOtherInfo {
-  flex-basis: 50%;
+  flex-basis: 100%;
 }
 
 .userPersonalInfo h1,p{
@@ -16,6 +16,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 20px;
+}
+
+.userOtherInfo img{
+  height: 130px;
+  width: 130px;
+  align-self: center;
 }
 
 .profileHeader h1 {
@@ -32,5 +39,23 @@
 }
 
 .userStat {
-  margin-left: 15px;
+  margin-left: 0;
 }
+
+/* Tablet and Desktop view */
+@media screen and (min-width: 800px) {
+  .userPersonalInfo, .userOtherInfo {
+    flex-basis: 50%;
+  }
+  .userOtherInfo {
+    margin-top: 0;
+  }
+  .userStat {
+    margin-left: 15px;
+  }
+  .userOtherInfo img{
+    height: 180px;
+    width: 180px;
+  }
+}
+
