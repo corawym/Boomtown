@@ -8,7 +8,6 @@ import './styles.css';
 class ItemCard extends Component {
   render() {
     const {data} = this.props
-
     return (
       <Card className='itemCard'>
         <ItemPhoto imageurl={data.imageurl} title={data.title} available={data.available}/>
