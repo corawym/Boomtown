@@ -11,7 +11,7 @@ const mergeUsersItems = (users, items) => {
   return users.map(user => {
     return {
       ...user,
-      items: items.filter(item => item.itemOwner === user.id)
+      items: items.filter(item => item.itemowner === user.id)
     }
   })
 }
@@ -20,7 +20,7 @@ const mergeItemsUsers = (items, users) => {
   return items.map(item => {
     return {
       ...item,
-      user: users.find(user => item.itemOwner === user.id)
+      user: users.find(user => item.itemowner === user.id)
     }
   })
 }

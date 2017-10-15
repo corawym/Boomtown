@@ -15,7 +15,7 @@ class ProfileCard extends Component {
         <Paper zDepth={1} style={{display: 'flex', padding: '50px 30px'}}>
 
           <div className="userPersonalInfo">
-            <h1>{userSelect.fullName}</h1>
+            <h1>{userSelect.fullname}</h1>
             <p className="subtitle">{userSelect.bio}</p>
           </div>
 

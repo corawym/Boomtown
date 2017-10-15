@@ -7,7 +7,7 @@ class User extends Component {
     const {user, date} = this.props;
     return (
       <CardHeader
-        title={user.fullName}
+        title={user.fullname}
         subtitle={date}
         avatar={<Gravatar email={user.email} 
         style={{borderRadius:'50%'}}

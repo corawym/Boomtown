@@ -11,10 +11,10 @@ class ItemCard extends Component {
 
     return (
       <Card className='itemCard'>
-        <ItemPhoto imageUrl={data.imageUrl} available={data.available}/>
+        <ItemPhoto imageurl={data.imageurl} title={data.title} available={data.available}/>
         <div style={{padding:'16px 0'}}>
-          <Link to={`/profile/${data.user.id}`} className='userInfo'>
-            <User user={data.user} date={data.createdOn}/>
+          <Link to={`/profile/${data.itemowner}`} className='userInfo'>
+            <User user={data.user} date={data.created}/>
           </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>
           { data.available ? <ButtonBorrow /> : false }

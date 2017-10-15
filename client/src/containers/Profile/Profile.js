@@ -84,7 +84,7 @@ const mapStateToProps = (store, ownProps) => {
       }
     }),
     items: store.users.items.filter(item =>{
-      if(ownProps.match.params.id === item.itemOwner){
+      if(ownProps.match.params.id === item.itemowner){
         return item
       }
     })
