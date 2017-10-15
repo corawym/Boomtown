@@ -9,7 +9,10 @@ class User extends Component {
       <CardHeader
         title={user.fullName}
         subtitle={date}
-        avatar={<Gravatar email={user.email} style={{borderRadius:'50%'}}/>}
+        avatar={<Gravatar email={user.email} 
+        style={{borderRadius:'50%'}}
+        />}
+        textStyle={{paddingRight:'20px'}}
       />
     )
   }

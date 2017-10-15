@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-
 import { getCardItems } from '../../redux/actions'
 
 import { CardList } from './index'
 import { ButtonAddItem } from '../../components/common'
 
+import './styles.css';
 
 class CardsContainer extends Component {
-  state = { cardData:[] }
+  // state = { cardData:[] }
 
   componentDidMount(){
     this.props.dispatch(getCardItems());
@@ -54,7 +54,6 @@ class CardsContainer extends Component {
 }
 
 const mapStateToProps = (store) => {
-  console.log(store);
   return {
     items: store.users.items
   }

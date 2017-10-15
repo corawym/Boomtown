@@ -14,6 +14,8 @@ class CardList extends Component {
     return (
       <div className="cardList"> 
         <Masonry className='masonry' elementType={'ul'}>
+          
+          {/* check the return array */}
           { cardData.length !== 0 ? cardData.map(items => 
             <li>
               <ItemCard 

@@ -11,8 +11,9 @@ class UserItems extends Component {
 
     return (
       <div className="cardList"> 
+        
         <Masonry className='masonry' elementType={'ul'}>
-          {cardData.map(item => 
+          { cardData.map(item => 
             <li>
               <ItemCard 
                 key={item.id}
