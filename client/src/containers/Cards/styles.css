@@ -10,10 +10,9 @@
   right: 2rem;
 }
 
-.cardsContainer, .masonry {
+.cardsContainer {
   width: 100%;
 }
-
 
 
 .masonry li {
