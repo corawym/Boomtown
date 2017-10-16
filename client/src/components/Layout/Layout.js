@@ -15,6 +15,7 @@ const Layout = ({ children }) => (
             <Switch>
                 <Route exact path="/" component={Header} />
                 <Route exact path="/profile/:id" component={Header} />
+                <Route path="*" component={Header} />
             </Switch>
         </div>
         <div className="appContent">

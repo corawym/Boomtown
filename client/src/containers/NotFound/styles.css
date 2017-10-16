@@ -6,7 +6,18 @@
   justify-content: center;
 }
 
+.notFoundWrapper{
+  text-align: center;
+}
+
 .notFoundContainer h1 {
-  font-size: 4rem;
-   text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 1.7rem;
+  color: white;
+}
+
+.notFoundPic{
+  height: 40vh;
+  width: auto;
 }
