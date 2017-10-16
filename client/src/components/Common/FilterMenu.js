@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { SelectField, MenuItem } from 'material-ui'
 
+
 class FilterMenu extends Component {
+
   render() {
 
     const { filterSelected, filters, handleChange } = this.props
+
     return (
       <div className="filterMenuWrapper">
         <SelectField 

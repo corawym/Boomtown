@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements';
 
 import './styles.css';
+
 class ItemCard extends Component {
   render() {
     const {data} = this.props
