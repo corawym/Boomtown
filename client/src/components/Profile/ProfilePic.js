@@ -10,6 +10,7 @@ class ProfilePic extends Component {
     return (
       <Gravatar 
         email={userSelect.email} 
+        size={180}
         style={{borderRadius:'50%', display: 'flex', justifyContent: 'center'}}
       />
     )
