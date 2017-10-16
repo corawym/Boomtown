@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CardMedia, CardTitle } from 'material-ui/Card'
+import PropTypes from 'prop-types'
 
 class ItemPhoto extends Component {
   render() {
@@ -14,6 +15,12 @@ class ItemPhoto extends Component {
       </CardMedia>
     )
   }
+}
+
+ItemPhoto.propTypes = {
+  imageurl: PropTypes.string.isRequired,
+  available: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default ItemPhoto

@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { Paper } from 'material-ui';
+import React, { Component } from 'react'
+import { Paper } from 'material-ui'
+import PropTypes from 'prop-types'
 
-import { ProfilePic } from './index';
+import { ProfilePic } from './index'
 
-import './styles.css';
+import './styles.css'
 
 class ProfileCard extends Component {
   render() {
@@ -34,5 +35,13 @@ class ProfileCard extends Component {
     )
   }
 }
+
+
+ProfileCard.propTypes = {
+  userSelect: PropTypes.object.isRequired,
+  itemsShared: PropTypes.number.isRequired,
+  itemsBorrowed: PropTypes.number.isRequired
+}
+
 
 export default ProfileCard

@@ -1,5 +1,5 @@
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { blueGrey900, white } from 'material-ui/styles/colors';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { blueGrey900, white } from 'material-ui/styles/colors'
 
 export default getMuiTheme({
     palette: {
@@ -8,4 +8,4 @@ export default getMuiTheme({
         primary1Color: '#48C6EF',
         accent1Color: blueGrey900
     }
-});
+})

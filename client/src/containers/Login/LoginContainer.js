@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
 
-import Login from './Login';
+import Login from './Login'
 
 class LoginContainer extends Component {
 
@@ -19,4 +19,4 @@ class LoginContainer extends Component {
     }
 }
 
-export default LoginContainer;
+export default LoginContainer

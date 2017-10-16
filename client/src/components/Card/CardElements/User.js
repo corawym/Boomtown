@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CardHeader } from 'material-ui'
+import PropTypes from 'prop-types'
 import Gravatar from 'react-gravatar'
 import moment from 'moment'
 
@@ -18,6 +19,11 @@ class User extends Component {
       />
     )
   }
+}
+
+User.propTypes = {
+  user: PropTypes.object.isRequired,
+  date: PropTypes.string.isRequired
 }
 
 export default User

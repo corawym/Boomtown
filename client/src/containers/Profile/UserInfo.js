@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import { ProfileCard } from '../../components/Profile'
 
@@ -14,6 +15,12 @@ class UserInfo extends Component {
       </div>
     )
   }
+}
+
+UserInfo.propTypes = {
+  userSelect: PropTypes.object.isRequired,
+  itemsShared: PropTypes.number.isRequired,
+  itemsBorrowed: PropTypes.number.isRequired
 }
 
 export default UserInfo

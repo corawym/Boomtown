@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'
 
 import { Header } from '../../containers/Header'
 import { Footer } from '../../containers/Footer'
@@ -23,15 +23,15 @@ const Layout = ({ children }) => (
         {/* And a footer here, but not on the login route... */}
         <Footer/>
     </div>
-);
+)
 
 Layout.defaultProps = {
     children: null
-};
+}
 
 Layout.propTypes = {
     children: PropTypes.node
-};
+}
 
-export default Layout;
+export default Layout
 

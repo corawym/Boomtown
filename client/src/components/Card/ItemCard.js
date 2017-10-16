@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { Card } from 'material-ui';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Card } from 'material-ui'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements';
+import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements'
 
-import './styles.css';
+import './styles.css'
 
 class ItemCard extends Component {
   render() {
@@ -22,6 +23,10 @@ class ItemCard extends Component {
       </Card>
     )
   }
+}
+
+ItemCard.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default ItemCard

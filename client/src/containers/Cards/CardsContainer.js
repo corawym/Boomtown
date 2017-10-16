@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 import { getCardItems } from '../../redux/actions'
@@ -9,36 +10,11 @@ import { ButtonAddItem } from '../../components/common'
 import './styles.css';
 
 class CardsContainer extends Component {
-  // state = { cardData:[] }
+
 
   componentDidMount(){
     this.props.dispatch(getCardItems());
-    // this.fetchData();
   }
-
-  // fetchData = () => {
-  //   const urls = [ 'http://localhost:3001/items', 'http://localhost:3001/users' ]
-  //   Promise.all(urls.map(url =>
-  //     fetch(url).then(resp => resp.json())
-  //   )).then(data => {
-  //     const [items, users] = data
-  //     const cardData = items.map(item => {
-  //       return {
-  //         "id": item.id,
-  //         "title": item.title,
-  //         "description": item.description,
-  //         "imageUrl": item.imageUrl,
-  //         "tags": item.tags,
-  //         "itemOwner": item.itemOwner,
-  //         "createdOn": item.createdOn,
-  //         "available": item.available,
-  //         "borrower": item.borrower,
-  //         "user": users.find(user => item.itemOwner === user.id)
-  //       }
-  //     })
-  //     this.setState({cardData})
-  //   })
-  // }
   
   render() {
     return (
@@ -57,6 +33,10 @@ const mapStateToProps = (store) => {
   return {
     items: store.users.items
   }
+}
+
+CardsContainer.propTypes = {
+  items: PropTypes.array.isRequired
 }
 
 export default connect(mapStateToProps)(CardsContainer)

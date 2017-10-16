@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { SelectField, MenuItem } from 'material-ui'
-
+import PropTypes from 'prop-types'
 
 class FilterMenu extends Component {
 
   render() {
 
-    const { filterSelected, filters, handleChange } = this.props
+    const { filterSelected, handleChange, filters } = this.props
 
     return (
       <div className="filterMenuWrapper">
@@ -30,6 +30,12 @@ class FilterMenu extends Component {
       </div>
     )
   }
+}
+
+FilterMenu.propTypes = {
+  filterSelected: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  filters: PropTypes.array.isRequired
 }
 
 export default FilterMenu

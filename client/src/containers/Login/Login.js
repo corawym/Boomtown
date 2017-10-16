@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton'
+import Paper from 'material-ui/Paper'
 
-import ValidatedTextField from '../../components/ValidatedTextField';
+import ValidatedTextField from '../../components/ValidatedTextField'
 
-import './styles.css';
-import logo from '../../images/boomtown-logo.svg';
-import bottomLeft from '../../images/home-bl.svg';
-import topRight from '../../images/home-tr.svg';
+import './styles.css'
+import logo from '../../images/boomtown-logo.svg'
+import bottomLeft from '../../images/home-bl.svg'
+import topRight from '../../images/home-tr.svg'
 
 const Login = ({ login }) => (
     <div className="page login">
@@ -40,10 +40,10 @@ const Login = ({ login }) => (
             </Paper>
         </div>
     </div>
-);
+)
 
 Login.propTypes = {
     login: PropTypes.func.isRequired
-};
+}
 
-export default Login;
+export default Login

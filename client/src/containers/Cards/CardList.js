@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Masonry from 'react-masonry-component'
+import PropTypes from 'prop-types'
 
 import { ItemCard } from '../../components/Card'
 
@@ -17,9 +18,8 @@ class CardList extends Component {
           
           {/* check the return array */}
           { cardData.length !== 0 ? cardData.map(items => 
-            <li>
+            <li key={items.id}>
               <ItemCard 
-                key={items.id}
                 data={items}
               />
             </li>
@@ -28,6 +28,10 @@ class CardList extends Component {
       </div>
     )
   }
+}
+
+CardList.propTypes = {
+  cardData: PropTypes.array.isRequired
 }
 
 export default CardList

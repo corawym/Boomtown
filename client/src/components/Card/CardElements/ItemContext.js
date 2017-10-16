@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CardTitle, CardText } from 'material-ui'
+import PropTypes from 'prop-types'
 
 
 class ItemContext extends Component {
@@ -14,6 +15,12 @@ class ItemContext extends Component {
       </div>
     )
   }
+}
+
+ItemContext.propTypes = {
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  tags: PropTypes.array.isRequired
 }
 
 export default ItemContext

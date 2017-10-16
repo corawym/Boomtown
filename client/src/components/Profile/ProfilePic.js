@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Gravatar from 'react-gravatar'
+import PropTypes from 'prop-types'
 
 class ProfilePic extends Component {
 
@@ -13,6 +14,10 @@ class ProfilePic extends Component {
       />
     )
   }
+}
+
+ProfilePic.propTypes = {
+  userSelect: PropTypes.object.isRequired
 }
 
 export default ProfilePic
