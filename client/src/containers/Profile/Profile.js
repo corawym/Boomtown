@@ -54,6 +54,8 @@ class Profile extends Component {
 
     // })
   // }
+
+  
   
   render() {
     return (
@@ -61,7 +63,7 @@ class Profile extends Component {
 
         {/* check the return object */}
         {this.props.users 
-          ? <UserInfo userSelect={this.props.users} itemsShared={3} itemsBorrowed={4}/> 
+          ? <UserInfo userSelect={this.props.users} itemsShared={this.props.items.length} itemsBorrowed={this.props.itemsBorrowed}/> 
           : false}
 
         <UserItems cardData={this.props.items}/> 
@@ -74,8 +76,6 @@ class Profile extends Component {
   }
 }
 
-// export default Profile
-
 const mapStateToProps = (store, ownProps) => {
   return {
     users: store.users.users.find(user =>{
@@ -87,7 +87,12 @@ const mapStateToProps = (store, ownProps) => {
       if(ownProps.match.params.id === item.itemowner){
         return item
       }
-    })
+    }),
+    itemsBorrowed: store.users.items.filter(item =>{
+      if(ownProps.match.params.id === item.borrower){
+        return item
+      }
+    }).length
   }
 }
 
