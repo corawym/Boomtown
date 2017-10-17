@@ -17,7 +17,8 @@ import Layout from './components/Layout'
 import Login from './containers/Login'
 import { CardsContainer } from './containers/Cards'
 import { Profile } from './containers/Profile'
-import { NotFound } from './containers/NotFound/'
+import { NotFound } from './containers/NotFound'
+import { Share } from './containers/Share'
 
 import configStore from './redux/configStore'
 
@@ -32,7 +33,7 @@ const Boomtown = () => (
                     <Route exact path="/" component={CardsContainer} />
                     <Route path="/login" component={Login} />
                     <Route path="/profile/:id" component={Profile} />
-                    {/*<Route path="/share" component={Share} />*/}
+                    <Route path="/share" component={Share} />
                     <Route component={NotFound} />
                 </Switch>
             </Layout>

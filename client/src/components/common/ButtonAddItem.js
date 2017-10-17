@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
+import { Link } from 'react-router-dom'
 
 class ButtonAddItem extends Component {
 
   render() {
     return (
-      <FloatingActionButton secondary>
-        <ContentAdd />
-      </FloatingActionButton>
+      <Link to={"/share"}>
+        <FloatingActionButton secondary>
+          <ContentAdd />
+        </FloatingActionButton>
+      </Link>
     )
   }
 }

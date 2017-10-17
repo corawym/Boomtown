@@ -22,7 +22,7 @@ class CardsContainer extends Component {
           {/*{this.props.users.users.map((user)=><li>{JSON.stringify(user)}</li>)}*/}
           <CardList cardData={this.props.items}/>
           <div className="buttonAddContainer">
-              <ButtonAddItem />
+            <ButtonAddItem />
           </div> 
         </div>
     )

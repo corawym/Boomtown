@@ -35,6 +35,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (store, ownProps) => {
+  
   return {
     users: store.users.users.find(user =>{
       if(ownProps.match.params.id === user.id){

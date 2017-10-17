@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import logo from '../../images/boomtown-logo.svg'
 
@@ -6,9 +7,9 @@ class LogoBoom extends Component {
   render() {
     return (
       <div className="logoWrapper">
-        <a href="/">
+        <Link to={"/"}>
           <img src={logo} alt="Boomtown Logo" className="logoSize"/>
-        </a>
+        </Link>
       </div>
     )
   }
