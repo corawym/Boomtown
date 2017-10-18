@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Leftside, Rightside } from './index'
 
 import './styles.css'
 
@@ -6,7 +7,10 @@ class Share extends Component {
   state = {  }
   render() {
     return (
-      <div></div>
+      <div className="shareContainer">
+        <Leftside />
+        <Rightside />
+      </div>
     )
   }
 }
