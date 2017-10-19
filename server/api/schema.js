@@ -1,5 +1,5 @@
 import { makeExecutableSchema } from 'graphql-tools';
-// import resolvers from './resolvers'; 
+import resolvers from './resolvers'; 
 
 
 const typeDefs = ` 
@@ -9,7 +9,7 @@ const typeDefs = `
     description: String
     imageurl: String
     tags: [String]
-    itemowner: String!
+    itemowner: User!
     created: String!
     available: Boolean!
     borrower: User
@@ -34,5 +34,5 @@ const typeDefs = `
 
 export default makeExecutableSchema ({
   typeDefs,
-  // resolvers,
+  resolvers,
 });
