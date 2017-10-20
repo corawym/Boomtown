@@ -15,7 +15,7 @@ class ItemCard extends Component {
         <ItemPhoto imageurl={data.imageurl} title={data.title} available={data.available}/>
         <div style={{padding:'16px 0'}}>
           <Link to={`/profile/${data.itemowner}`} className='userInfo'>
-            <User user={data.user} date={data.created}/>
+            <User user={data.itemowner} date={data.created}/>
           </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>
           { data.available ? <ButtonBorrow /> : false }

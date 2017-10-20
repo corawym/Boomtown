@@ -20,10 +20,11 @@ class CardsContainer extends Component {
   // }
   
   render() {
+    console.log(this.props.data);
     return (
         <div className="cardsContainer">
           {/*{this.props.users.users.map((user)=><li>{JSON.stringify(user)}</li>)}*/}
-          {!this.props.data.loading?<CardList cardData={this.props.data.items}/>:false}
+          { !this.props.data.loading ? <CardList cardData={this.props.data.items}/> : false }
           <div className="buttonAddContainer">
             <ButtonAddItem />
           </div> 
@@ -40,13 +41,14 @@ const fetchItems = gql`
       imageurl
       tags
       itemowner {
+        id
         fullname
         email
       }
       created
       available
       borrower{
-        fullname
+        id
       }
     }
   }
