@@ -5,13 +5,14 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import { Provider } from 'react-redux'
+import { ApolloProvider } from 'react-apollo';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import registerServiceWorker from './registerServiceWorker'
 
 import './index.css'
 import muiTheme from './config/theme'
+import client from './config/apolloClient';
 
 import Layout from './components/Layout'
 import Login from './containers/Login'
@@ -42,7 +43,7 @@ const Boomtown = () => (
 )
 
 ReactDOM.render(
-    <Provider store={store}>
+    <ApolloProvider client={client} store={store}>
         <Boomtown />
-    </Provider>, document.getElementById('root'));
+    </ApolloProvider>, document.getElementById('root'));
 registerServiceWorker();

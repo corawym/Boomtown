@@ -27,6 +27,7 @@ const resolveFunctions = {
   },
   Item: {
     itemowner(item){
+      if (!item.itemowner) return null;
       return fetch(`${mainURL}/users/${item.itemowner}`)
       .then(response => response.json())
       .catch(errors => console.log(errors));
@@ -49,7 +50,32 @@ const resolveFunctions = {
       const items = await response.json()
       return items
     }
+  },
+  Mutation: {
+    addItem(root, args) {
+      const tzOffset = (new Date()).getTimezoneOffset() * 60000; // offset in milliseconds
+      const localTime = `${(new Date(Date.now() - tzOffset)).toISOString().slice(0, -1).replace('T', ' ')}-07`;
+      const newItem = {
+        title: args.title,
+        description: args.description,
+        imageurl: args.imageurl,
+        tags: args.tags,
+        itemowner: args.itemowner,
+        created: localTime,
+        available: true,
+        borrower: null
+      }
+      return fetch(`${mainURL}/items`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newItem)
+      })
+      .then(response => response.json())
+      .catch(errors => console.log(errors))
+    }
   }
-};
+}
 
-export default resolveFunctions;
+export default resolveFunctions

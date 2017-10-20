@@ -274,6 +274,19 @@
       "created": "2017-09-15 16:06:12.503874-07",
       "available": true,
       "borrower": null
+    },
+    {
+      "title": "table",
+      "description": "A new black table",
+      "imageurl": "http://www.ikea.com/gb/en/images/products/lerhamn-table-black-brown__0238241_pe377689_s5.jpg",
+      "tags": [
+        "Household Items"
+      ],
+      "itemowner": "k721A4pRNggCx7b6ryEE8vx1VIi1",
+      "created": "2017-10-20 11:40:42.717-07",
+      "available": true,
+      "borrower": null,
+      "id": 22
     }
   ],
   "users": [
