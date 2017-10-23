@@ -1,40 +1,40 @@
 import fetch from 'node-fetch'
 
-const mainURL = 'http://localhost:3001'
+const jsonServer = 'http://localhost:3001'
 // jsonServer
 
 export const getItems = () => {
-  return fetch(`${mainURL}/items`)
+  return fetch(`${jsonServer}/items`)
   .then(response => response.json())
   .catch(errors => console.log(errors));
 }
 
 export const getItem = (id) => {
-  return fetch(`${mainURL}/items/${id}`)
+  return fetch(`${jsonServer}/items/${id}`)
   .then(response => response.json())
   .catch(errors => console.log(errors))
 }
 
 export const getUsers = () => {
-  return fetch(`${mainURL}/users`)
+  return fetch(`${jsonServer}/users`)
   .then(response => response.json())
   .catch(errors => console.log(errors))
 }
 
 export const getUser = (id) => {
-  return fetch(`${mainURL}/users/${id}`)
+  return fetch(`${jsonServer}/users/${id}`)
   .then(response => response.json())
   .catch(errors => console.log(errors))
 }
 
 export const getUserOwnedItems = (id) => {
-  return fetch(`${mainURL}/items/?itemowner=${id}`)
+  return fetch(`${jsonServer}/items/?itemowner=${id}`)
   .then(response => response.json())
   .catch(errors => console.log(errors))
 }
 
 export const getUserBorrowedItems = (id) => {
-  return fetch(`${mainURL}/items/?borrower=${id}`)
+  return fetch(`${jsonServer}/items/?borrower=${id}`)
   .then(response => response.json())
   .catch(errors => console.log(errors))
 }
@@ -53,7 +53,7 @@ export const createNewItem = (title, description, imageurl, tags, itemowner) => 
     available: true,
     borrower: null
   }
-  return fetch(`${mainURL}/items`, {
+  return fetch(`${jsonServer}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

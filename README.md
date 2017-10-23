@@ -13,6 +13,7 @@ It uses local mock data, React and the Material UI library to build out the appl
 - ES 2016
 - Webpack
 - CSS3
+- GraphQL
 
 ## Installation
 
@@ -28,6 +29,12 @@ From inside the `client` directory, run:
 
 ```bash
 npm run dev
+```
+
+From inside the `server` directory, run:
+
+```bash
+npm start
 ```
 
 ## Screenshots

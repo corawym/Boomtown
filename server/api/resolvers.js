@@ -1,7 +1,5 @@
 import fetch from 'node-fetch'
 
-const mainURL = 'http://localhost:3001'
-
 import { 
   getItems, 
   getItem, 
