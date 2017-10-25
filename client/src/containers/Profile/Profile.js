@@ -19,7 +19,6 @@ class Profile extends Component {
   // }
 
   render() {
-    console.log(this.props.data);
     return (
       <div className="profileContainer">
 

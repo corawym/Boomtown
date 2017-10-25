@@ -1,6 +1,7 @@
- import { Pool } from 'pg'
+import { Pool } from 'pg'
 
-module.exports = function(app) {
+export default function(app) {
+
   const pgclient = new Pool({
     user: app.get('PG_USER'),
     host: app.get('PG_HOST'),
@@ -10,9 +11,22 @@ module.exports = function(app) {
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 2000
   })
+
   return {
     getItems(){
-      return pgclient.query("SELECT * from items").then(res=>(res.rows));
-    }
+      return pgclient.query("SELECT * FROM items")
+      .then(response => response.rows)
+      .catch(errors => console.log(errors));
+    },
+    getItem(id){
+      return pgclient.query("SELECT * FROM items")
+      .then(response => response.rows)
+      .catch(errors => console.log(errors));
+    },
+    getTags(){
+      return pgclient.query("SELECT * FROM tags")
+      .then(response => response.rows)
+      .catch(errors => console.log(errors));
+    },
   };
 }

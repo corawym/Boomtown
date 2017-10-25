@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 import { 
-  getItem, 
+  // getItem, 
   getUsers, 
   getUser, 
   getUserOwnedItems, 
@@ -9,7 +9,7 @@ import {
   createNewItem
 } from './resource/jsonHelper'
 
-import { database } from '../index.js';
+import { database } from '../index.js'
 
 const resolveFunctions = {
   Query: {
