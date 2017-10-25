@@ -1,5 +1,5 @@
 import DataLoader from 'dataloader';
-import { getItem, getUser, getUserOwnedItems, getUserBorrowedItems } from './jsonHelper';
+import { getItem, getUser, getUserOwnedItems, getUserBorrowedItems } from './resource/jsonHelper';
 
 export default function() {
   return {

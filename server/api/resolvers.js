@@ -8,7 +8,7 @@ import {
   getUserOwnedItems, 
   getUserBorrowedItems,
   createNewItem
-} from './jsonHelper'
+} from './resource/jsonHelper'
 
 const resolveFunctions = {
   Query: {

@@ -3,12 +3,18 @@ import bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import cors from 'cors';
 
-import schema from './api/schema'
+import schema from './api/schema';
 import createLoaders from './api/loaders';
+
+const initConfigs = require("./configs");
+const initPostgres = require("./resource/postgresHelpers");
 
 
 const app = express();
-const GQL_PORT = 5000;
+const GQL_PORT = process.env.PORT;
+
+initConfigs(app);
+export const database = initPostgres(app);
 
 app.use('*', cors());
 
