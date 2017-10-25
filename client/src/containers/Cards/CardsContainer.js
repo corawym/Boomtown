@@ -4,13 +4,13 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getCardItems } from '../../redux/actions'
 
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 import { CardList } from './index'
 import { ButtonAddItem } from '../../components/common'
 
-import './styles.css';
+import './styles.css'
 
 class CardsContainer extends Component {
 
@@ -61,7 +61,7 @@ const fetchItems = gql`
 // }
 
 CardsContainer.propTypes = {
-  items: PropTypes.array.isRequired
+  data: PropTypes.object.isRequired
 }
 
 // export default connect(mapStateToProps)(CardsContainer)
