@@ -1,4 +1,4 @@
-module.exports = function(app) {
+export default function(app) {
   app.set('PG_USER', process.env.PG_USER || 'boomtown');
   app.set('PG_PASSWORD', process.env.PG_PASSWORD || 'boomtown');
   app.set('PG_DATABASE', process.env.PG_DATABASE || 'boomtown');

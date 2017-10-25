@@ -12,13 +12,13 @@ class ItemCard extends Component {
     const {data} = this.props
     return (
       <Card className='itemCard'>
-        <ItemPhoto imageurl={data.imageurl} title={data.title} available={data.available}/>
+        <ItemPhoto imageurl={data.imageurl} title={data.title} available={!data.borrower ? true : false }/>
         <div style={{padding:'16px 0'}}>
-          <Link to={`/profile/${data.itemowner}`} className='userInfo'>
+          <Link to={`/profile/${data.itemowner.id}`} className='userInfo'>
             <User user={data.itemowner} date={data.created}/>
           </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>
-          { data.available ? <ButtonBorrow /> : false }
+          { !data.borrower? <ButtonBorrow /> : false }
         </div>
       </Card>
     )

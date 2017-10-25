@@ -8,7 +8,7 @@ class ItemContext extends Component {
     const {description, title, tags} = this.props
     return (
       <div>
-        <CardTitle title={title} subtitle={tags.join(', ')} />
+        <CardTitle title={title} subtitle={tags ? tags.join(', ') : ''} />
         <CardText>
           {description}
         </CardText>

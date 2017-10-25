@@ -1,7 +1,6 @@
 import fetch from 'node-fetch'
 
 import { 
-  getItems, 
   getItem, 
   getUsers, 
   getUser, 
@@ -10,10 +9,12 @@ import {
   createNewItem
 } from './resource/jsonHelper'
 
+import { database } from '../index.js';
+
 const resolveFunctions = {
   Query: {
     items() {
-      return getItems()
+      return database.getItems();
     },
     item(root, { id }, context) {
       // return getItem(id)

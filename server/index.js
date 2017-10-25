@@ -6,8 +6,8 @@ import cors from 'cors';
 import schema from './api/schema';
 import createLoaders from './api/loaders';
 
-const initConfigs = require("./configs");
-const initPostgres = require("./resource/postgresHelpers");
+import initConfigs from './api/configs';
+import initPostgres from './api/resource/postgresHelpers';
 
 
 const app = express();

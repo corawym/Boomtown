@@ -40,13 +40,13 @@ const fetchItems = gql`
       title
       imageurl
       tags
+      description
       itemowner {
         id
         fullname
         email
       }
       created
-      available
       borrower{
         id
       }
