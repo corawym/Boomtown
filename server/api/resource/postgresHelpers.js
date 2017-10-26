@@ -19,7 +19,7 @@ export default function(app) {
       .catch(errors => console.log(errors));
     },
     getItem(id){
-      return pgclient.query("SELECT * FROM items")
+      return pgclient.query("SELECT * FROM items(id)")
       .then(response => response.rows)
       .catch(errors => console.log(errors));
     },
@@ -27,6 +27,6 @@ export default function(app) {
       return pgclient.query("SELECT * FROM tags")
       .then(response => response.rows)
       .catch(errors => console.log(errors));
-    },
+    }
   };
 }

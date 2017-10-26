@@ -1,4 +1,5 @@
 import React from 'react';
+import { reduxForm, Field, formValueSelector } from 'redux-form';
 import {
   Step,
   Stepper,
@@ -7,6 +8,7 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import { TextInput, TextArea } from './Textinputs'
 
 /**
  * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
@@ -85,6 +87,19 @@ class ShareStepper extends React.Component {
             <StepLabel>Add a Title & Description</StepLabel>
             <StepContent>
               <p>????????</p>
+              <form>
+                <Field 
+                  name="itemTitle" 
+                  type="text" 
+                  component={TextInput}
+                />
+                <Field 
+                  name="itemDescription" 
+                  type="text" 
+                  component={TextArea} 
+                />
+                <RaisedButton label="Submit" primary type="submit"/>
+              </form>
               {this.renderStepActions(1)}
             </StepContent>
           </Step>
@@ -124,4 +139,8 @@ class ShareStepper extends React.Component {
   }
 }
 
-export default ShareStepper
+const newItemForm = reduxForm({
+  form:'newItemForm'
+})(ShareStepper)
+
+export default newItemForm

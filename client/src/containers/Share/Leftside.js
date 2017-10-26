@@ -6,9 +6,21 @@ class Leftside extends Component {
   state = {  }
   render() {
     return (
-      <div className="shareLeftside"></div>
 
-        // <ItemCard />
+      <div className="shareLeftside">
+        <ItemCard 
+          data={{
+            imageurl: "?",
+            title: "?",
+            available: true,
+            itemowner: "?",
+            created: "?",
+            description: "?",
+            tags: [],
+            borrower: null
+          }}
+        />
+      </div>  
 
     )
   }
