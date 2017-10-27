@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
 import { connect } from 'react-redux'
-
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -13,23 +11,30 @@ import './styles.css'
 
 class CardsContainer extends Component {
 
-
-  // componentDidMount(){
-  //   this.props.dispatch(getCardItems());
-  // }
   
   render() {
     const { items, loading } = this.props.data
     const { filterSelected } = this.props
+    let allCard = [];
+    if(filterSelected.length>0){
+      allCard = items.filter(item => {
+        if(item.tags.some(tag => filterSelected.findIndex(filterItem => filterItem.id === tag.id)>=0)){
+          return item;
+        }
+      })
+    }else{
+      allCard = items;
+    }
+
     return (
       <div className="cardsContainer">
-        {/*{this.props.users.users.map((user)=><li>{JSON.stringify(user)}</li>)}*/}
-        { !this.props.data.loading ? <CardList cardData={this.props.data.items}/> : false }
+        { !loading ? <CardList cardData={allCard}/> : false }
         <div className="buttonAddContainer">
           <ButtonAddItem />
         </div> 
       </div>
     )
+
   }
 }
 
@@ -57,12 +62,6 @@ const fetchItems = gql`
   }
 `
 
-// const mapStateToProps = (store) => {
-//   return {
-//     items: store.users.items
-//   }
-// }
-
 CardsContainer.propTypes = {
   data: PropTypes.object.isRequired
 }
@@ -75,5 +74,4 @@ const mapStateToProps = (state)=>{
 
 const CardData = graphql(fetchItems)(CardsContainer)
 
-// export default connect(mapStateToProps)(CardsContainer)
 export default connect(mapStateToProps)(CardData);

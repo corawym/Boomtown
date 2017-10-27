@@ -6,7 +6,7 @@ class Rightside extends Component {
   state = {  }
   render() {
     return (
-      <div className="shareRighttside">
+      <div className="shareRightside">
         <ShareStepper />
       </div>
     )

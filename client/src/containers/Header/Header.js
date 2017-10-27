@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { AppBar } from 'material-ui'
-import { setFilterTags } from '../../redux/modules/filterReducer'
-import { Leftside, Rightside } from './index'
 import { connect } from 'react-redux'
-
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+
+import { Leftside, Rightside } from './index'
+import { setFilterTags } from '../../redux/modules/filter'
 
 import './styles.css'
 

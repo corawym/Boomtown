@@ -8,22 +8,21 @@ class FilterMenu extends Component {
 
     const { filterSelected, handleChange, filters } = this.props
 
-
     return (
       <div className="filterMenuWrapper">
         <SelectField 
-          value={filterSelected} 
-          onChange={handleChange} 
-          hintText="Filter by Tag" 
-          multiple={true}
+          value = {filterSelected} 
+          onChange = {handleChange} 
+          hintText = "Filter by Tag" 
+          multiple = {true}
         >
 
           {filters.map(items => 
             <MenuItem 
-              key={items.id} 
-              value={items.title} 
-              primaryText={items.title}
-              checked={ filterSelected && filterSelected.includes(items.title)}
+              key = {items.id} 
+              value = {items} 
+              primaryText ={ items.title}
+              checked = { filterSelected && filterSelected.includes(items) }
             />
           )}
 
