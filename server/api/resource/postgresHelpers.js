@@ -19,7 +19,7 @@ export default function(app) {
       .catch(errors => console.log(errors));
     },
     getItem(id){
-      return pgclient.query(`SELECT * FROM items WHERE id=${id}`)
+      return pgclient.query(`SELECT * FROM items WHERE id = ${id}`)
       .then(response => response.rows)
       .catch(errors => console.log(errors));
     },
@@ -32,6 +32,16 @@ export default function(app) {
       return pgclient.query(`SELECT tags.id, tags.title FROM tags JOIN itemtags on tags.id = itemtags.tagid WHERE itemtags.itemid = ${id}`)
       .then(response => response.rows)
       .catch(errors => console.log(errors));
+    },
+    getUserOwnedItems(id){
+      return pgclient.query(`SELECT * FROM items WHERE itemowner = ${id}`)
+      .then(response => response.json())
+      .catch(errors => console.log(errors))
+    },
+    getUserBorrowedItems(id){
+      return pgclient.query(`SELECT * FROM items WHERE borrower = ${id}`)
+      .then(response => response.json())
+      .catch(errors => console.log(errors))
     }
   };
 }

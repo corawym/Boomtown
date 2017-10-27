@@ -16,9 +16,10 @@ const resolveFunctions = {
     items() {
       return database.getItems();
     },
-    item(root, { id }, context) {
+    item(root, { id }) {
       // return getItem(id)
-      return context.loaders.Item.load(id)
+      // return context.loaders.Item.load(id)
+      return database.getItem(id)
     },
     users(){
       return getUsers()
@@ -27,15 +28,15 @@ const resolveFunctions = {
       // return getUser(id)
       return context.loaders.User.load(id)
     },
-    tags(root,{id}){
+    tags(root, { id }){
       return database.getTags();
     } 
   },
   Item: {
     itemowner(item, args, context){
       if (!item.itemowner) return null
-      return context.loaders.User.load(item.itemowner)
       // return getUser(item.itemowner)
+      return context.loaders.User.load(item.itemowner)
     },
     borrower(item, args, context){
       if (!item.borrower) return null
