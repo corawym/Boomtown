@@ -10,6 +10,8 @@ import { ApolloProvider } from 'react-apollo';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import registerServiceWorker from './registerServiceWorker'
 
+import * as firebase from 'firebase';
+
 import './index.css'
 import muiTheme from './config/theme'
 import client from './config/apolloClient';
@@ -23,6 +25,15 @@ import { Share } from './containers/Share'
 
 import configStore from './redux/configStore'
 
+var config = {
+    apiKey: "AIzaSyCeCPwIZYs_4omqZcolYjsRzJ7F5Z4wV58",
+    authDomain: "boomtown-6d207.firebaseapp.com",
+    databaseURL: "https://boomtown-6d207.firebaseio.com",
+    projectId: "boomtown-6d207",
+    storageBucket: "boomtown-6d207.appspot.com",
+    messagingSenderId: "816574523629"
+  };
+firebase.initializeApp(config);
 
 const store = configStore()
 
