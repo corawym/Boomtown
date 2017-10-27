@@ -26,6 +26,9 @@ const resolveFunctions = {
     user(root, { id }, context) {
       // return getUser(id)
       return context.loaders.User.load(id)
+    },
+    tags(root,{id}){
+      return database.getTags();
     } 
   },
   Item: {
@@ -38,6 +41,9 @@ const resolveFunctions = {
       if (!item.borrower) return null
       // return getUser(item.borrower)
       return context.loaders.User.load(item.borrower)
+    },
+    tags(item, args){
+      return database.getTag(item.id);
     }
   },
   User: {

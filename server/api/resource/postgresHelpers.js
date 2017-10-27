@@ -19,12 +19,17 @@ export default function(app) {
       .catch(errors => console.log(errors));
     },
     getItem(id){
-      return pgclient.query("SELECT * FROM items(id)")
+      return pgclient.query(`SELECT * FROM items WHERE id=${id}`)
       .then(response => response.rows)
       .catch(errors => console.log(errors));
     },
     getTags(){
       return pgclient.query("SELECT * FROM tags")
+      .then(response => response.rows)
+      .catch(errors => console.log(errors));
+    },
+    getTag(id){
+      return pgclient.query(`SELECT tags.id, tags.title FROM tags JOIN itemtags on tags.id = itemtags.tagid WHERE itemtags.itemid = ${id}`)
       .then(response => response.rows)
       .catch(errors => console.log(errors));
     }

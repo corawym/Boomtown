@@ -1,36 +1,28 @@
 import React, { Component } from 'react'
 import { AppBar } from 'material-ui'
-
+import { setFilterTags } from '../../redux/modules/filterReducer'
 import { Leftside, Rightside } from './index'
+import { connect } from 'react-redux'
+
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 import './styles.css'
 
 
 class Header extends Component {
 
-
-  state = { 
-    filters: [
-      { id: 1, name: "Electronics" },
-      { id: 2, name: "Household Items" },
-      { id: 3, name: "Musical Instruments" },
-      { id: 4, name: "Physical Media" },
-      { id: 5, name: "Recreational Equipment" },
-      { id: 6, name: "Sporting Goods" },
-      { id: 7, name: "Tools" }
-    ],
-    filterSelected: [] 
-   }
-
    handleChange = (event, index, value) => {
-     this.setState({filterSelected: value})
+     this.props.dispatch(setFilterTags(value))
    }
 
   render() {
+    const { loading, tags } = this.props.data
+    const { filterSelected } = this.props
     return (
       <AppBar
         title="Title"
-        iconElementLeft={ <Leftside filters={this.state.filters}  handleChange={this.handleChange} filterSelected={this.state.filterSelected}/> }
+        iconElementLeft={ <Leftside filters={!loading?tags:[]}  handleChange={this.handleChange} filterSelected={filterSelected}/> }
         iconElementRight={ <Rightside /> }
         style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0 10px', display:'flex', alignItems:'center', flexWrap:'wrap'}}
         iconStyleLeft={{ margin: '0'}}
@@ -40,4 +32,20 @@ class Header extends Component {
   }
 }
 
-export default Header
+const fetchTags = gql`
+  query {
+    tags{
+      id
+      title
+    }
+  }
+`
+const mapStateToProps = (state)=>{
+  return{
+    filterSelected: state.filter.filteredTags
+  }
+}
+
+const HeaderData = graphql(fetchTags)(Header)
+
+export default connect(mapStateToProps)(HeaderData)

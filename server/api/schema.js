@@ -8,7 +8,7 @@ const typeDefs = `
     title: String!
     description: String
     imageurl: String
-    tags: [String]
+    tags: [Tag]
     itemowner: User!
     created: String!
     borrower: User
@@ -22,12 +22,19 @@ const typeDefs = `
     owneditems: [Item]
     borroweditems: [Item]
   }
+
+  type Tag {
+    id:ID!
+    title: String!
+  }
   
   type Query {
     items: [Item]
     item(id: ID!): Item
     users: [User]
     user(id: ID!): User
+    tags:[Tag]
+    tag(id:ID!):Tag
   }
 
   type Mutation {

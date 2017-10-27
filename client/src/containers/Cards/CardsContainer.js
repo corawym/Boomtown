@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { getCardItems } from '../../redux/actions'
 
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -20,6 +19,8 @@ class CardsContainer extends Component {
   // }
   
   render() {
+    const { items, loading } = this.props.data
+    const { filterSelected } = this.props
     return (
       <div className="cardsContainer">
         {/*{this.props.users.users.map((user)=><li>{JSON.stringify(user)}</li>)}*/}
@@ -38,7 +39,10 @@ const fetchItems = gql`
       id
       title
       imageurl
-      tags
+      tags{
+        id
+        title
+      }
       description
       itemowner {
         id
@@ -63,5 +67,13 @@ CardsContainer.propTypes = {
   data: PropTypes.object.isRequired
 }
 
+const mapStateToProps = (state)=>{
+  return{
+    filterSelected: state.filter.filteredTags
+  }
+}
+
+const CardData = graphql(fetchItems)(CardsContainer)
+
 // export default connect(mapStateToProps)(CardsContainer)
-export default graphql(fetchItems)(CardsContainer);
+export default connect(mapStateToProps)(CardData);

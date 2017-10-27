@@ -6,9 +6,13 @@ import PropTypes from 'prop-types'
 class ItemContext extends Component {
   render() {
     const {description, title, tags} = this.props
+    const tagsArray = tags.reduce((acc,curr)=>{
+      acc.push(curr.title);
+      return acc
+    },[])
     return (
       <div>
-        <CardTitle title={title} subtitle={tags ? tags.join(', ') : ''} />
+        <CardTitle title={title} subtitle={tagsArray ? tagsArray.join(', ') : ''} />
         <CardText>
           {description}
         </CardText>

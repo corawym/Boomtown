@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { getCardItems } from '../../redux/actions'
 
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -71,7 +70,10 @@ const fetchUser = gql`
         id
         title
         imageurl
-        tags
+        tags{
+          id
+          title
+        }
         description
         itemowner {
           id

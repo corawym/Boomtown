@@ -9,6 +9,8 @@
 
 .shareLeftside {
   flex-basis: 45%;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
 .shareRighttside {

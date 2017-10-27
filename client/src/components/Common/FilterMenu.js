@@ -8,6 +8,7 @@ class FilterMenu extends Component {
 
     const { filterSelected, handleChange, filters } = this.props
 
+
     return (
       <div className="filterMenuWrapper">
         <SelectField 
@@ -20,9 +21,9 @@ class FilterMenu extends Component {
           {filters.map(items => 
             <MenuItem 
               key={items.id} 
-              value={items.name} 
-              primaryText={items.name}
-              checked={ filterSelected && filterSelected.includes(items.name)}
+              value={items.title} 
+              primaryText={items.title}
+              checked={ filterSelected && filterSelected.includes(items.title)}
             />
           )}
 
