@@ -1,5 +1,10 @@
 import * as firebase from 'firebase'
 
+// export default function (app) {
+//   firebase.initializeApp({
+    
+//   })
+// }
 const firebaseDB = firebase.database()
 
 export const getUser = id => {

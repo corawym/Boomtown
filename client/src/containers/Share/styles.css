@@ -9,10 +9,17 @@
 
 .shareLeftside {
   flex-basis: 45%;
-  padding-left: 6%;
-  padding-right: 6%;
+  margin-left: 10px;
 }
 
-.shareRighttside {
+.shareLeftside .itemCard {
+ max-width: 360px;
+}
+
+.shareRightside {
   flex-basis: 55%;
+}
+
+.shareRightside p{
+  margin: 15px 0;
 }

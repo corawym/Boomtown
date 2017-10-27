@@ -1,19 +1,29 @@
 import React from 'react'
 import TextField from 'material-ui/TextField';
 
-export const TextInput = field => (
+export const TextTitle = field => (
   <TextField 
-     hintText="Please enter an item title"
-     id="itemTitle"
-     {...field.input}
+    hintText="Title"
+    floatingLabelText="Title"
+    id="itemTitle"
+    floatingLabelFocusStyle={{color: 'white'}}
+    underlineFocusStyle={{borderBottom: '1px solid black'}}
+    style={{width: '100%'}}
+    {...field.input}
   />
 )
   
-export const TextArea = field => (
+export const TextDescription = field => (
   <TextField 
-     hintText="Please enter an item description"
-     id="itemDescription"
-     {...field.input}
+    hintText="Description"
+    floatingLabelText="Description"
+    id="itemDescription"
+    multiLine={true}
+    rows={3}
+    floatingLabelFocusStyle={{color: 'white'}}
+    underlineFocusStyle={{borderBottom: '1px solid black'}}
+    style={{width: '100%'}}
+    {...field.input}
   />
 )
-  
+
