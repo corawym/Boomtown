@@ -8,8 +8,10 @@ import { ItemPhoto, ItemContext, User, ButtonBorrow } from './CardElements'
 import './styles.css'
 
 class ItemCard extends Component {
+  
   render() {
     const {data} = this.props
+    console.log(data.borrower);
     return (
       <Card className='itemCard'>
         <ItemPhoto imageurl={data.imageurl} title={data.title} available={!data.borrower ? true : false }/>
@@ -18,7 +20,7 @@ class ItemCard extends Component {
             <User user={data.itemowner} date={data.created}/>
           </Link>
           <ItemContext description={data.description} title={data.title} tags={data.tags}/>
-          { !data.borrower? <ButtonBorrow /> : false }
+          { !data.borrower ? <ButtonBorrow /> : false }
         </div>
       </Card>
     )

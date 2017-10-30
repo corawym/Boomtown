@@ -16,6 +16,10 @@
  max-width: 360px;
 }
 
+.shareLeftside .buttonBorrow{
+  display: none;
+}
+
 .shareRightside {
   flex-basis: 55%;
 }

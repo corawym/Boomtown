@@ -13,7 +13,8 @@ export const setStepIndex = (stepIndex) =>({
 
 const initialState ={
   selectedTags:[],
-  stepIndex:0
+  stepIndex:0,
+  shareCreated:`${(new Date(Date.now() - ((new Date()).getTimezoneOffset() * 60000))).toISOString().slice(0, -1).replace('T', ' ')}-07`
 }
 
 export default (state=initialState, action) => {

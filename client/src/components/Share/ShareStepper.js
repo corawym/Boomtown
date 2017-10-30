@@ -75,7 +75,7 @@ class ShareStepper extends React.Component {
               <p>Folks need to know what you're sharing. Give them a clue by adding a title & description.</p>
               <form>
                 <Field
-                  name="itemtitle" 
+                  name="itemTitle" 
                   type="text" 
                   component={TextTitle}
                 />
