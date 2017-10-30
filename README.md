@@ -14,6 +14,10 @@ It uses local mock data, React and the Material UI library to build out the appl
 - Webpack
 - CSS3
 - GraphQL
+- Express
+- PostgreSQL
+- Firebase
+
 
 ## Installation
 
