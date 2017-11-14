@@ -4,8 +4,8 @@ import {
   // getItem, 
   getUsers, 
   getUser, 
-  getUserOwnedItems, 
-  getUserBorrowedItems,
+  // getUserOwnedItems, 
+  // getUserBorrowedItems,
   createNewItem
 } from './resource/jsonHelper'
 
@@ -37,11 +37,13 @@ const resolveFunctions = {
       if (!item.itemowner) return null
       // return getUser(item.itemowner)
       return context.loaders.User.load(item.itemowner)
+      
     },
     borrower(item, args, context){
       if (!item.borrower) return null
       // return getUser(item.borrower)
       return context.loaders.User.load(item.borrower)
+      
     },
     tags(item, args){
       return database.getTag(item.id);
@@ -50,13 +52,16 @@ const resolveFunctions = {
   User: {
     owneditems(user, args, context){
       if (!user.id) return null
-      return context.loaders.UserOwnedItems.load(user.id)
+      // return context.loaders.UserOwnedItems.load(user.id)
+      return database.getUserOwnedItems(user.id)
       // return getUserOwnedItems(user.id)
     },
     borroweditems(user, args, context){
       if (!user.id) return null
       // return getUserBorrowedItems(user.id)
-      return context.loaders.UserBorrowedItems.load(user.id)
+      // return context.loaders.UserBorrowedItems.load(user.id)
+      return database.getUserBorrowedItems(user.id)
+      
     }
   },
   Mutation: {

@@ -16,16 +16,20 @@ class CardsContainer extends Component {
     const { items, loading } = this.props.data
     const { filterSelected } = this.props
     let allCard = [];
-    if(filterSelected.length>0){
+    if(filterSelected.length>0 && !loading){
       allCard = items.filter(item => {
         if(item.tags.some(tag => filterSelected.findIndex(filterItem => filterItem.id === tag.id)>=0)){
           return item;
         }
       })
     }else{
-      allCard = items;
+      if(!loading){
+        allCard = items;
+      }
     }
-
+    console.log(loading);
+    console.log(items);
+    console.log(allCard);
     return (
       <div className="cardsContainer">
         { !loading ? <CardList cardData={allCard}/> : false }
@@ -39,7 +43,7 @@ class CardsContainer extends Component {
 }
 
 const fetchItems = gql`
-  query fetchItems {
+  query {
     items {
       id
       title

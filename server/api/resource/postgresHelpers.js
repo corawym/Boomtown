@@ -34,13 +34,17 @@ export default function(app) {
       .catch(errors => console.log(errors));
     },
     getUserOwnedItems(id){
-      return pgclient.query(`SELECT * FROM items WHERE itemowner = ${id}`)
-      .then(response => response.json())
+      return pgclient.query(`SELECT * FROM items WHERE itemowner = '${id}'`)
+      .then(response => {
+        console.log(response.rows)
+        return response.rows
+        
+      })
       .catch(errors => console.log(errors))
     },
     getUserBorrowedItems(id){
-      return pgclient.query(`SELECT * FROM items WHERE borrower = ${id}`)
-      .then(response => response.json())
+      return pgclient.query(`SELECT * FROM items WHERE borrower = '${id}'`)
+      .then(response => response.rows)
       .catch(errors => console.log(errors))
     }
   };
