@@ -22,8 +22,14 @@ import { CardsContainer } from './containers/Cards'
 import { Profile } from './containers/Profile'
 import { NotFound } from './containers/NotFound'
 import { Share } from './containers/Share'
-
+import { loginSuccess, logoutSuccess } from './redux/modules/login'
 import configStore from './redux/configStore'
+import PrivateRoute from './PrivateRoute'
+
+
+
+const store = configStore()
+
 
 const config = {
     apiKey: "AIzaSyCeCPwIZYs_4omqZcolYjsRzJ7F5Z4wV58",
@@ -35,17 +41,24 @@ const config = {
   };
 firebase.initializeApp(config);
 
-const store = configStore()
+firebase.auth().onAuthStateChanged(function(user) {
+    console.log(user);
+    if (user) {
+        store.dispatch(loginSuccess(user));
+    } else {
+        store.dispatch(logoutSuccess());
+    }
+});
 
 const Boomtown = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
         <Router>
             <Layout>
                 <Switch>
-                    <Route exact path="/" component={CardsContainer} />
                     <Route path="/login" component={Login} />
-                    <Route path="/profile/:id" component={Profile} />
-                    <Route path="/share" component={Share} />
+                    <PrivateRoute exact path="/" component={CardsContainer} />
+                    <PrivateRoute path="/profile/:id" component={Profile} />
+                    <PrivateRoute path="/share" component={Share} />
                     <Route component={NotFound} />
                 </Switch>
             </Layout>

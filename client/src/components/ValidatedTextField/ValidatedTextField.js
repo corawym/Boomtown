@@ -34,7 +34,7 @@ const ValidatedTextField = field => {
 }
 
 ValidatedTextField.propTypes = {
-    label: PropTypes.string.isRequired
+    field: PropTypes.object
 }
 
 export default ValidatedTextField;
