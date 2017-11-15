@@ -35,11 +35,7 @@ export default function(app) {
     },
     getUserOwnedItems(id){
       return pgclient.query(`SELECT * FROM items WHERE itemowner = '${id}'`)
-      .then(response => {
-        console.log(response.rows)
-        return response.rows
-        
-      })
+      .then(response => response.rows)
       .catch(errors => console.log(errors))
     },
     getUserBorrowedItems(id){

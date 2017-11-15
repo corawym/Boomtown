@@ -27,9 +27,6 @@ class CardsContainer extends Component {
         allCard = items;
       }
     }
-    console.log(loading);
-    console.log(items);
-    console.log(allCard);
     return (
       <div className="cardsContainer">
         { !loading ? <CardList cardData={allCard}/> : false }

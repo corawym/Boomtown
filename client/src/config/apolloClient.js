@@ -1,7 +1,7 @@
 import ApolloClient, { createNetworkInterface } from 'react-apollo';
 
 const networkInterface = createNetworkInterface({
-    uri: 'http://localhost:5000/graphql'
+    uri: 'http://localhost:4200/graphql'
 });
 
 const client = new ApolloClient({ networkInterface });

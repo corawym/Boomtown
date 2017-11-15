@@ -25,7 +25,7 @@ import { Share } from './containers/Share'
 
 import configStore from './redux/configStore'
 
-var config = {
+const config = {
     apiKey: "AIzaSyCeCPwIZYs_4omqZcolYjsRzJ7F5Z4wV58",
     authDomain: "boomtown-6d207.firebaseapp.com",
     databaseURL: "https://boomtown-6d207.firebaseio.com",
