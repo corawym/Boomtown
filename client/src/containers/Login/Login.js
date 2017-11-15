@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import RaisedButton from 'material-ui/RaisedButton'
-import Paper from 'material-ui/Paper'
+import { RaisedButton, Paper } from 'material-ui'
+import { reduxForm, Field } from 'redux-form'
 
 import ValidatedTextField from '../../components/ValidatedTextField'
 
@@ -27,10 +26,12 @@ const Login = ({ login }) => (
                 <div className="formContainer">
                     <form onSubmit={login} autoComplete="off">
                         <div>
-                            <ValidatedTextField label="Email" />
+                            {/*<ValidatedTextField label="Email" />*/}
+                            <Field name="email" type="email" component={ValidatedTextField} />
                         </div>
                         <div>
-                            <ValidatedTextField label="Password" />
+                            {/*<ValidatedTextField label="Password" />*/}
+                            <Field name="password" type="password" component={ValidatedTextField} />
                         </div>
                         <RaisedButton className="enterButton" primary fullWidth type="submit">
                             Enter
@@ -46,4 +47,8 @@ Login.propTypes = {
     login: PropTypes.func.isRequired
 }
 
-export default Login
+const loginForm = reduxForm ({
+    form: 'loginForm'
+})(Login)
+
+export default loginForm

@@ -18,15 +18,20 @@ const styles = {
     }
 }
 
-const ValidatedTextField = ({ label }) => (
-    <TextField
-        style={styles.fieldStyle}
-        hintText={label}
-        floatingLabelText={label}
-        errorStyle={styles.errorStyle}
-        underlineFocusStyle={styles.underlineStyle}
-    />
-)
+const ValidatedTextField = field => {
+    console.log(field);
+    return(
+        <TextField
+            style={styles.fieldStyle}
+            hintText={field.input.name}
+            floatingLabelText={field.input.name}
+            type={field.input.name}
+            errorStyle={styles.errorStyle}
+            underlineFocusStyle={styles.underlineStyle}
+            {...field.input}
+        />
+    )
+}
 
 ValidatedTextField.propTypes = {
     label: PropTypes.string.isRequired
