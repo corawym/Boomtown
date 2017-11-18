@@ -3,7 +3,9 @@ import * as firebase from 'firebase'
 // import PropTypes from 'prop-types';
 import { formValueSelector } from 'redux-form'
 import { connect } from 'react-redux'
-
+import { 
+  Redirect
+} from 'react-router-dom';
 import Login from './Login'
 
 class LoginContainer extends Component {
@@ -30,6 +32,12 @@ class LoginContainer extends Component {
     }
 
     render() {
+        const { user } = this.props;
+        if(user){
+            return(
+                <Redirect to='/' />
+            )
+        }
         return (
             <Login login={this.login} />
         );
@@ -40,7 +48,8 @@ class LoginContainer extends Component {
 const mapStateToProps = state => {
     const values = formValueSelector('loginForm')
     return {
-        loginInput: values(state, 'email', 'password')
+        loginInput: values(state, 'email', 'password'),
+        user: state.login.user
     }
 }
 
