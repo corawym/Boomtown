@@ -15,7 +15,7 @@ class LoginContainer extends Component {
 
     login = async (e) => {
         e.preventDefault();
-        console.log('You clicked the login button.');
+        // console.log('You clicked the login button.');
         // firebase.auth().createUserWithEmailAndPassword('mackenzie@redacademy.com', '1234567')
         //         .then( user => firebase.database()
         //                                 .ref(`users/${user.uid}`)

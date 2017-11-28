@@ -5,7 +5,7 @@ class Rightside extends Component {
   render() {
     return (
       <div className="headerRightWrapper">
-        <ButtonMyProfile />
+        <ButtonMyProfile userID={this.props.userID}/>
         <ButtonLogOut logOut={this.props.logOut}/>
       </div>
     )

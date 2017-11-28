@@ -26,10 +26,7 @@ import { loginSuccess, logoutSuccess } from './redux/modules/login'
 import configStore from './redux/configStore'
 import PrivateRoute from './PrivateRoute'
 
-
-
 const store = configStore()
-
 
 const config = {
     apiKey: "AIzaSyCeCPwIZYs_4omqZcolYjsRzJ7F5Z4wV58",
@@ -42,7 +39,7 @@ const config = {
 firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
-    console.log(user);
+    // console.log(user);
     if (user) {
         store.dispatch(loginSuccess(user));
     } else {
