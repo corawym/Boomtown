@@ -6,7 +6,7 @@ class Rightside extends Component {
     return (
       <div className="headerRightWrapper">
         <ButtonMyProfile />
-        <ButtonLogOut />
+        <ButtonLogOut logOut={this.props.logOut}/>
       </div>
     )
   }

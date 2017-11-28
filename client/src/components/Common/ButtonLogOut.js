@@ -8,6 +8,7 @@ class ButtonLogOut extends Component {
         label="Logout"
         secondary
         style={{marginLeft: '12px'}}
+        onClick={this.props.logOut}
       />
     )
   }

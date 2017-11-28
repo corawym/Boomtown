@@ -3,6 +3,7 @@ import { AppBar } from 'material-ui'
 import { connect } from 'react-redux'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import * as firebase from 'firebase';
 
 import { Leftside, Rightside } from './index'
 import { setFilterTags } from '../../redux/modules/filter'
@@ -16,6 +17,11 @@ class Header extends Component {
      this.props.dispatch(setFilterTags(value))
    }
 
+  logOut = (event) =>{
+    event.preventDefault()
+    firebase.auth().signOut()
+  }
+
   render() {
     const { loading, tags } = this.props.data
     const { filterSelected } = this.props
@@ -24,7 +30,7 @@ class Header extends Component {
       <AppBar
         title="Title"
         iconElementLeft={ <Leftside filters={!loading?tags:[]}  handleChange={this.handleChange} filterSelected={filterSelected}/> }
-        iconElementRight={ <Rightside /> }
+        iconElementRight={ <Rightside logOut={this.logOut}/> }
         style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0 10px', display:'flex', alignItems:'center', flexWrap:'wrap'}}
         iconStyleLeft={{ margin: '0'}}
         iconStyleRight={{ marginRight: '0'}}
