@@ -11,7 +11,7 @@ class ItemCard extends Component {
   
   render() {
     const {data} = this.props
-    console.log(data.borrower);
+    // console.log(data.borrower);
     return (
       <Card className='itemCard'>
         <ItemPhoto imageurl={data.imageurl} title={data.title} available={!data.borrower ? true : false }/>

@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { 
   BrowserRouter as Router, 
   Route,
@@ -7,24 +7,24 @@ import {
 } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import registerServiceWorker from './registerServiceWorker'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import registerServiceWorker from './registerServiceWorker';
 
 import * as firebase from 'firebase';
 
 import './index.css'
-import muiTheme from './config/theme'
+import muiTheme from './config/theme';
 import client from './config/apolloClient';
 
-import Layout from './components/Layout'
-import Login from './containers/Login'
-import { CardsContainer } from './containers/Cards'
-import { Profile } from './containers/Profile'
-import { NotFound } from './containers/NotFound'
-import { Share } from './containers/Share'
-import { loginSuccess, logoutSuccess } from './redux/modules/login'
-import configStore from './redux/configStore'
-import PrivateRoute from './PrivateRoute'
+import Layout from './components/Layout';
+import Login from './containers/Login';
+import { CardsContainer } from './containers/Cards';
+import { Profile } from './containers/Profile';
+import { NotFound } from './containers/NotFound';
+import { Share } from './containers/Share';
+import { loginSuccess, logoutSuccess } from './redux/modules/login';
+import configStore from './redux/configStore';
+import PrivateRoute from './PrivateRoute';
 
 const store = configStore()
 
@@ -39,7 +39,7 @@ const config = {
 firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
-    // console.log(user);
+    console.log(user);
     if (user) {
         store.dispatch(loginSuccess(user));
     } else {

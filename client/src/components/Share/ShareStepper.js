@@ -64,7 +64,13 @@ class ShareStepper extends React.Component {
             <StepLabel style={{fontSize: '18px'}}>Add an Image</StepLabel>
             <StepContent style={{fontSize: '14px'}}>
               <p>We live in a visual culture. Upload an image of the item you're sharing.</p>
-              <RaisedButton label="select an image" secondary type="submit" style={{marginTop: '12px'}}/>
+              {/*<RaisedButton 
+                label="select an image" 
+                secondary type="submit" 
+                style={{marginTop: '12px'}} 
+                handleImageUpload={this.props.handleImageUpload}
+              />*/}
+              <input type='file' id='imageUploader' onChange={this.props.handleImageUpload} />
               {this.renderStepActions(0)}
             </StepContent>
           </Step>

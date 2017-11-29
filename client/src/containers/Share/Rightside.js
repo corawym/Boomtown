@@ -6,7 +6,13 @@ class Rightside extends Component {
   render() {
     return (
       <div className="shareRightside">
-        <ShareStepper stepIndex={this.props.stepIndex} handleChange={this.props.handleChange} filters={this.props.filters} filterSelected={this.props.filterSelected}/>
+        <ShareStepper 
+          stepIndex={this.props.stepIndex} 
+          handleChange={this.props.handleChange} 
+          filters={this.props.filters} 
+          filterSelected={this.props.filterSelected}
+          handleImageUpload={this.props.handleImageUpload}
+        />
       </div>
     )
   }
