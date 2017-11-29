@@ -19,7 +19,7 @@ export const TextDescription = field => (
     floatingLabelText="Description"
     id="itemDescription"
     multiLine={true}
-    rows={3}
+    rows={2}
     floatingLabelFocusStyle={{color: 'white'}}
     underlineFocusStyle={{borderBottom: '1px solid black'}}
     style={{width: '100%'}}

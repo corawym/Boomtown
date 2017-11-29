@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
 import { formValueSelector } from 'redux-form'
-import { setSelectedTags, setImageFile, setImageData } from '../../redux/modules/share';
+import { setSelectedTags, setImageFile, setImageData, resetShare } from '../../redux/modules/share';
 import * as firebase from 'firebase'
 import './styles.css'
 
@@ -17,10 +17,10 @@ class Share extends Component {
     // console.log(input.target.files[0]);
     if (input.target.files && input.target.files[0]) {
       var reader = new FileReader();
-      console.log(input.target.files[0])
+      // console.log(input.target.files[0])
       this.props.dispatch(setImageFile(input.target.files[0]));
       reader.onload = (e) => {
-        console.log(e.target.result)
+        // console.log(e.target.result)
         this.props.dispatch(setImageData(e.target.result))
       }
     reader.readAsDataURL(input.target.files[0]);
@@ -28,7 +28,7 @@ class Share extends Component {
   }
   handleSubmitItem = async (e) => {
     e.preventDefault();
-    console.log(this.props.imageFile);
+    // console.log(this.props.imageFile);
     const imageURL = await firebase.storage()
             .ref()
             .child(`images/${this.props.data.user.id}/${this.props.imageFile.name}-${this.props.shareCreated}`)
@@ -39,6 +39,31 @@ class Share extends Component {
     const allSelectedTags = this.props.filterSelected.map((tag) => tag.id);
 
     this.props.mutate({
+      refetchQueries: [{
+        query: gql`
+          query {
+            items {
+              id
+              title
+              imageurl
+              tags{
+                id
+                title
+              }
+              description
+              itemowner {
+                id
+                fullname
+                email
+              }
+              created
+              borrower{
+                id
+              }
+            }
+          }
+        `
+      }],
       variables: {
         title: this.props.itemsInput.itemTitle,
         description: this.props.itemsInput.itemDescription,
@@ -48,9 +73,10 @@ class Share extends Component {
       }
     })
     .then(res => {
-      console.log('success');
+      // console.log('success');
+      this.props.dispatch(resetShare());
+      this.props.history.push('/')
     })
-
   }
   render() {
     // console.log(this.props.itemsInput)

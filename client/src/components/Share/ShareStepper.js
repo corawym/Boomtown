@@ -1,5 +1,5 @@
 import React from 'react';
-import { reduxForm, Field, formValueSelector } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import {
   Step,
   Stepper,
