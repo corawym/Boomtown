@@ -36,7 +36,7 @@ class ShareStepper extends React.Component {
           disableTouchRipple={true}
           disableFocusRipple={true}
           default
-          onClick={this.handleNext}
+          onClick={stepIndex === 3 ? this.props.handleSubmitItem : this.handleNext}
           style={{marginRight: 12}}
         />
         {step > 0 && (

@@ -7,7 +7,7 @@ import {
   Redirect
 } from 'react-router-dom';
 
-const PrivateRoute = ({ component: Component, user, ...rest}) => (
+const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Route
     {...rest}
     location={rest.location}
@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, user, ...rest}) => (
       user ? (
         <Component {...props} />
       )
-      : (<Redirect to={{ pathname: '/login', state: { from: props.location} }} />)
+      : (<Redirect to={{ pathname: '/login', state: { from: props.location } }} />)
     )}
   />
 );

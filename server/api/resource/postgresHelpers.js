@@ -42,6 +42,23 @@ export default function(app) {
       return pgclient.query(`SELECT * FROM items WHERE borrower = '${id}'`)
       .then(response => response.rows)
       .catch(errors => console.log(errors))
+    },
+    createNewItem(title, description, imageurl, tags, itemowner) {
+      pgclient.query(`INSERT INTO items (title, description, imageurl, itemowner) VALUES ('${title}', '${description}', '${imageurl}', '${itemowner}') RETURNING id`)
+              .then(res => {
+                console.log(tags)
+                const tagsSQLValues = tags.reduce((acc,curr,index,array) => {
+                  if(index < array.length-1) {
+                    acc = `${acc}('${res.rows[0].id}','${curr}'),`;
+                  }else{
+                    acc = `${acc}('${res.rows[0].id}','${curr}')`;
+                  }
+                  return acc
+                },'')
+                console.log(tagsSQLValues);
+                pgclient.query(`INSERT INTO itemtags (itemid, tagid) VALUES ${tagsSQLValues}`)
+              })
+              .catch(errors => console.log(errors))
     }
   };
 }

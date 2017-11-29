@@ -3,25 +3,24 @@ const SET_STEP_INDEX = 'SET_STEP_INDEX';
 const SET_IMAGE_FILE = 'SET_IMAGE_FILE';
 const SET_IMAGE_DATA = 'SET_IMAGE_DATA';
 
-export const setSelectedTags = (selectedTags)=>({
+export const setSelectedTags = (selectedTags) => ({
   type:SET_SELECTED_TAGS,
   payload:selectedTags
 });
-
-export const setStepIndex = (stepIndex) =>({
+export const setStepIndex = (stepIndex) => ({
   type:SET_STEP_INDEX,
   payload:stepIndex
 })
-export const setImageFile = (imageFile) =>({
+export const setImageFile = (imageFile) => ({
   type:SET_IMAGE_FILE,
   payload:imageFile
 })
-export const setImageData = (imageData) =>({
+export const setImageData = (imageData) => ({
   type:SET_IMAGE_DATA,
   payload:imageData
 })
 
-const initialState ={
+const initialState = {
   selectedTags:[],
   stepIndex:0,
   imageFile:null,

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Leftside, Rightside } from './index'
 import { connect } from 'react-redux'
-import { graphql } from 'react-apollo'
+import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
 import { formValueSelector } from 'redux-form'
 import { setSelectedTags, setImageFile, setImageData } from '../../redux/modules/share';
-
+import * as firebase from 'firebase'
 import './styles.css'
 
 class Share extends Component {
@@ -26,9 +26,35 @@ class Share extends Component {
     reader.readAsDataURL(input.target.files[0]);
     }
   }
+  handleSubmitItem = async (e) => {
+    e.preventDefault();
+    console.log(this.props.imageFile);
+    const imageURL = await firebase.storage()
+            .ref()
+            .child(`images/${this.props.data.user.id}/${this.props.imageFile.name}-${this.props.shareCreated}`)
+            .put(this.props.imageFile)
+            .then((snapshot) => {
+              return snapshot.downloadURL;
+            })
+    const allSelectedTags = this.props.filterSelected.map((tag) => tag.id);
+
+    this.props.mutate({
+      variables: {
+        title: this.props.itemsInput.itemTitle,
+        description: this.props.itemsInput.itemDescription,
+        imageurl: imageURL,
+        tags: allSelectedTags,
+        itemowner: this.props.data.user.id
+      }
+    })
+    .then(res => {
+      console.log('success');
+    })
+
+  }
   render() {
-    console.log(this.props.itemsInput)
-    console.log(this.props);
+    // console.log(this.props.itemsInput)
+    // console.log(this.props);
     return (
       <div className="shareContainer">
         <Leftside 
@@ -45,6 +71,7 @@ class Share extends Component {
           filters={!this.props.data.loading ? this.props.data.tags : []} 
           filterSelected={this.props.filterSelected} 
           handleImageUpload={this.handleImageUpload}
+          handleSubmitItem = {this.handleSubmitItem}
         />
       </div>
     )
@@ -64,6 +91,26 @@ const fetchTagsUser = gql`
     }
   }
 `
+const addItem = gql`
+  mutation addItem(
+    $title: String!
+    $description: String
+    $imageurl: String
+    $tags: [String]
+    $itemowner: ID!
+  ){
+    addItem(
+      title: $title
+      description: $description
+      imageurl: $imageurl
+      tags: $tags
+      itemowner: $itemowner
+    ){
+      title
+      description
+    }
+  }
+`
 
 const mapStateToProps = (state)=>{
   const values = formValueSelector('newItemForm');
@@ -78,12 +125,12 @@ const mapStateToProps = (state)=>{
   }
 }
 
-const ShareData = graphql(fetchTagsUser,{
+const ShareData = compose(graphql(fetchTagsUser,{
   options: ownProps => ({
     variables: {
       id: ownProps.user.uid
     }
   })
-})(Share)
+}), graphql(addItem))(Share)
 
 export default connect(mapStateToProps)(ShareData)

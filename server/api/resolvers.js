@@ -1,13 +1,13 @@
 import fetch from 'node-fetch'
 
-import { 
-  // getItem, 
-  // getUsers, 
-  // getUser, 
-  // getUserOwnedItems, 
-  // getUserBorrowedItems,
-  createNewItem
-} from './resource/jsonHelper'
+// import { 
+//   getItem, 
+//   getUsers, 
+//   getUser, 
+//   getUserOwnedItems, 
+//   getUserBorrowedItems,
+//   createNewItem
+// } from './resource/jsonHelper'
 
 import { getUser, getUsers } from './resource/FirebaseDB'
 
@@ -63,12 +63,11 @@ const resolveFunctions = {
       // return getUserBorrowedItems(user.id)
       // return context.loaders.UserBorrowedItems.load(user.id)
       return database.getUserBorrowedItems(user.id)
-
     }
   },
   Mutation: {
     addItem(root, {title, description, imageurl, tags, itemowner}) {
-      return createNewItem(title, description, imageurl, tags, itemowner)
+      return database.createNewItem(title, description, imageurl, tags, itemowner)
     }
   }
 }

@@ -12,6 +12,7 @@ class Rightside extends Component {
           filters={this.props.filters} 
           filterSelected={this.props.filterSelected}
           handleImageUpload={this.props.handleImageUpload}
+          handleSubmitItem={this.props.handleSubmitItem}
         />
       </div>
     )
