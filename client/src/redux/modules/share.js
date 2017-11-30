@@ -7,20 +7,20 @@ const RESET_SHARE = 'RESET_SHARE';
 
 // Action
 export const setSelectedTags = (selectedTags) => ({
-  type:SET_SELECTED_TAGS,
-  payload:selectedTags
+  type: SET_SELECTED_TAGS,
+  payload: selectedTags
 });
 export const setStepIndex = (stepIndex) => ({
-  type:SET_STEP_INDEX,
-  payload:stepIndex
+  type: SET_STEP_INDEX,
+  payload: stepIndex
 })
 export const setImageFile = (imageFile) => ({
-  type:SET_IMAGE_FILE,
-  payload:imageFile
+  type: SET_IMAGE_FILE,
+  payload: imageFile
 })
 export const setImageData = (imageData) => ({
-  type:SET_IMAGE_DATA,
-  payload:imageData
+  type: SET_IMAGE_DATA,
+  payload: imageData
 })
 export const resetShare = () => ({
   type: RESET_SHARE,
@@ -28,11 +28,11 @@ export const resetShare = () => ({
 
 // Reducer
 const initialState = {
-  selectedTags:[],
-  stepIndex:0,
-  imageFile:null,
-  imageData:null,
-  shareCreated:`${(new Date(Date.now() - ((new Date()).getTimezoneOffset() * 60000))).toISOString().slice(0, -1).replace('T', ' ')}-07`
+  selectedTags: [],
+  stepIndex: 0,
+  imageFile: null,
+  imageData: null,
+  shareCreated: `${(new Date(Date.now() - ((new Date()).getTimezoneOffset() * 60000))).toISOString().slice(0, -1).replace('T', ' ')}-07`
 }
 
 export default (state=initialState, action) => {
@@ -45,26 +45,26 @@ export default (state=initialState, action) => {
     case SET_STEP_INDEX:
       return{
         ...state,
-        stepIndex:action.payload
+        stepIndex: action.payload
       }
     case SET_IMAGE_FILE:
       return{
         ...state,
-        imageFile:action.payload
+        imageFile: action.payload
       }
     case SET_IMAGE_DATA:
       return {
         ...state,
-        imageData:action.payload
+        imageData: action.payload
       }
     case RESET_SHARE: 
       return {
         // ...state,
-        selectedTags:[],
-        stepIndex:0,
-        imageFile:null,
-        imageData:null,
-        shareCreated:`${(new Date(Date.now() - ((new Date()).getTimezoneOffset() * 60000))).toISOString().slice(0, -1).replace('T', ' ')}-07`
+        selectedTags: [],
+        stepIndex: 0,
+        imageFile: null,
+        imageData: null,
+        shareCreated: `${(new Date(Date.now() - ((new Date()).getTimezoneOffset() * 60000))).toISOString().slice(0, -1).replace('T', ' ')}-07`
       }
     default:
       return state

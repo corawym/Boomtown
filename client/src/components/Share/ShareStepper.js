@@ -8,9 +8,9 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import { TextTitle, TextDescription } from './Textinputs'
-import { FilterMenu } from '../common/index'
-import { setStepIndex } from '../../redux/modules/share'
+import { TextTitle, TextDescription } from './Textinputs';
+import { FilterMenu } from '../common/index';
+import { setStepIndex } from '../../redux/modules/share';
 
 class ShareStepper extends React.Component {
 
@@ -64,12 +64,6 @@ class ShareStepper extends React.Component {
             <StepLabel style={{fontSize: '18px'}}>Add an Image</StepLabel>
             <StepContent style={{fontSize: '14px'}}>
               <p>We live in a visual culture. Upload an image of the item you're sharing.</p>
-              {/*<RaisedButton 
-                label="select an image" 
-                secondary type="submit" 
-                style={{marginTop: '12px'}} 
-                handleImageUpload={this.props.handleImageUpload}
-              />*/}
               <input type='file' id='imageUploader' onChange={this.props.handleImageUpload} />
               {this.renderStepActions(0)}
             </StepContent>

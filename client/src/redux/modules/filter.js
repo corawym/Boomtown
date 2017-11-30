@@ -3,12 +3,12 @@ const SET_FILTER_TAGS = 'SET_FILTER_TAGS';
 
 // Action Creator
 export const setFilterTags = (tags) => ({
-  type:SET_FILTER_TAGS,
+  type: SET_FILTER_TAGS,
   payload: tags
 });
 
 const initialState = {
-  filteredTags:[]
+  filteredTags: []
 }
 
 // Reducer

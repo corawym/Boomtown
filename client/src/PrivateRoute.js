@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { 
-  BrowserRouter as Router, 
-  Route,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Route

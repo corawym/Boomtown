@@ -46,7 +46,6 @@ export default function(app) {
     createNewItem(title, description, imageurl, tags, itemowner) {
       pgclient.query(`INSERT INTO items (title, description, imageurl, itemowner) VALUES ('${title}', '${description}', '${imageurl}', '${itemowner}') RETURNING id`)
               .then(res => {
-                // console.log(tags)
                 const tagsSQLValues = tags.reduce((acc,curr,index,array) => {
                   if(index < array.length-1) {
                     acc = `${acc}('${res.rows[0].id}','${curr}'),`;
@@ -55,7 +54,6 @@ export default function(app) {
                   }
                   return acc
                 },'')
-                // console.log(tagsSQLValues);
                 pgclient.query(`INSERT INTO itemtags (itemid, tagid) VALUES ${tagsSQLValues}`)
               })
               .catch(errors => console.log(errors))

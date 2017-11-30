@@ -42,7 +42,6 @@ export const getUserBorrowedItems = (id) => {
 export const createNewItem = (title, description, imageurl, tags, itemowner) => {
   const tzOffset = (new Date()).getTimezoneOffset() * 60000; // offset in milliseconds
   const localTime = `${(new Date(Date.now() - tzOffset)).toISOString().slice(0, -1).replace('T', ' ')}-07`
-  
   const newItem = {
     title,
     description,

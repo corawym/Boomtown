@@ -19,7 +19,6 @@ const styles = {
 }
 
 const ValidatedTextField = field => {
-    console.log(field);
     return(
         <TextField
             style={styles.fieldStyle}

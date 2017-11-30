@@ -11,7 +11,6 @@ import './styles.css'
 
 class CardsContainer extends Component {
 
-  
   render() {
     const { items, loading } = this.props.data
     const { filterSelected } = this.props
@@ -29,13 +28,12 @@ class CardsContainer extends Component {
     }
     return (
       <div className="cardsContainer">
-        { !loading ? <CardList cardData={allCard}/> : false }
+        { !loading ? <CardList cardData = {allCard}/> : false }
         <div className="buttonAddContainer">
           <ButtonAddItem />
         </div> 
       </div>
     )
-
   }
 }
 
@@ -67,7 +65,7 @@ CardsContainer.propTypes = {
   data: PropTypes.object.isRequired
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
   return{
     filterSelected: state.filter.filteredTags
   }

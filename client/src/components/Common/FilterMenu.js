@@ -5,9 +5,7 @@ import PropTypes from 'prop-types'
 class FilterMenu extends Component {
 
   render() {
-
     const { filterSelected, handleChange, filters } = this.props
-    console.log(filters);
     return (
       <div className="filterMenuWrapper">
         <SelectField 

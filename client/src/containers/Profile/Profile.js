@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -10,10 +9,6 @@ import { ButtonAddItem } from '../../components/common'
 import './styles.css'
 
 class Profile extends Component {
-
-  // componentDidMount(){
-  //   this.props.dispatch(getCardItems());
-  // }
 
   render() {
     return (

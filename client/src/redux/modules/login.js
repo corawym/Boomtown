@@ -14,7 +14,7 @@ export const logoutSuccess = () => ({
 });
 
 const initialState = {
-  user:null
+  user: null
 }
 
 // Reducer
@@ -23,12 +23,12 @@ export default (state=initialState, action) => {
     case LOGIN:
       return {
         ...state,
-        user:action.user
+        user: action.user
       }
     case LOGOUT:
       return {
         ...state,
-        user:null
+        user: null
       }
     default:
       return state

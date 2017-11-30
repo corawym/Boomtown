@@ -24,7 +24,6 @@ class Header extends Component {
   render() {
     const { loading, tags } = this.props.data
     const { filterSelected, user } = this.props
-    console.log(tags);
     return (
       <AppBar
         title="Title"

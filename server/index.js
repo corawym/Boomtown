@@ -5,7 +5,6 @@ import cors from 'cors';
 
 import schema from './api/schema';
 import createLoaders from './api/loaders';
-
 import initConfigs from './api/configs';
 import initPostgres from './api/resource/postgresHelpers';
 
