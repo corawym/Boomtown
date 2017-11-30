@@ -10,13 +10,15 @@ const resolveFunctions = {
       return database.getItems();
     },
     item(root, { id }) {
-      return database.getItem(id)
+      // return database.getItem(id)
+      return context.loaders.Item.load(id);
     },
     users(){
       return getUsers()
     },
     user(root, { id }, context) {
-      return getUser(id)
+      // return getUser(id)
+      return context.loaders.User.load(id);
     },
     tags(root, { id }){
       return database.getTags();
@@ -38,11 +40,13 @@ const resolveFunctions = {
   User: {
     owneditems(user, args, context){
       if (!user.id) return null
-      return database.getUserOwnedItems(user.id)
+      // return database.getUserOwnedItems(user.id)
+      return context.loaders.UserOwnedItems.load(user.id);
     },
     borroweditems(user, args, context){
       if (!user.id) return null
-      return database.getUserBorrowedItems(user.id)
+      // return database.getUserBorrowedItems(user.id)
+      return context.loaders.UserBorrowedItems.load(user.id);
     }
   },
   Mutation: {
