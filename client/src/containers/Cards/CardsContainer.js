@@ -19,6 +19,8 @@ class CardsContainer extends Component {
       allCard = items.filter(item => {
         if(item.tags.some(tag => filterSelected.findIndex(filterItem => filterItem.id === tag.id)>=0)){
           return item;
+        }else{
+          return false;
         }
       })
     }else{
