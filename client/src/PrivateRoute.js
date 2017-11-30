@@ -5,7 +5,6 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 const PrivateRoute = ({ component: Component, user, auth, ...rest }) => {
   if ( auth !== null ) {
-    console.log('done')
     return(
       
       <Route
@@ -20,7 +19,6 @@ const PrivateRoute = ({ component: Component, user, auth, ...rest }) => {
       />
     )  
   } else {
-    console.log('loading')
     return(
       <CircularProgress size={60} thickness={7} />
     )

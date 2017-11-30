@@ -1,24 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CardTitle, CardText } from 'material-ui'
 import PropTypes from 'prop-types'
 
 
-class ItemContext extends Component {
-  render() {
-    const {description, title, tags} = this.props
-    const tagsArray = tags.reduce((acc,curr)=>{
-      acc.push(curr.title);
-      return acc
-    },[])
-    return (
-      <div>
-        <CardTitle title={title} subtitle={tagsArray ? tagsArray.join(', ') : ''} />
-        <CardText>
-          {description}
-        </CardText>
-      </div>
-    )
-  }
+
+const ItemContext = ({description, title, tags}) => {
+  const tagsArray = tags.reduce((acc,curr)=>{
+    acc.push(curr.title);
+    return acc
+  },[])
+  return (
+    <div>
+      <CardTitle title={title} subtitle={tagsArray ? tagsArray.join(', ') : ''} />
+      <CardText>
+        {description}
+      </CardText>
+    </div>
+  )
 }
 
 ItemContext.propTypes = {
@@ -27,4 +25,4 @@ ItemContext.propTypes = {
   tags: PropTypes.array.isRequired
 }
 
-export default ItemContext
+export default ItemContext;
