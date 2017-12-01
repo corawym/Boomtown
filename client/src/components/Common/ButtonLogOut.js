@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+// import PropTypes from 'prop-types'
 import { RaisedButton } from 'material-ui'
 
-class ButtonLogOut extends Component {
-  render() {
-    return (
-      <RaisedButton
-        label="Logout"
-        secondary
-        style={{marginLeft: '12px'}}
-        onClick={this.props.logOut}
-      />
-    )
-  }
-}
+const ButtonLogOut = ({logOut}) => (
+  <RaisedButton
+    label="Logout"
+    secondary
+    style={{marginLeft: '12px'}}
+    onClick={logOut}
+  />
+);
 
-export default ButtonLogOut
+export default ButtonLogOut;

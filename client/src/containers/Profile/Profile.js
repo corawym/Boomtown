@@ -30,28 +30,6 @@ class Profile extends Component {
   }
 }
 
-// const mapStateToProps = (store, ownProps) => {
-  
-//   return {
-//     users: store.users.users.find(user =>{
-//       if(ownProps.match.params.id === user.id){
-//         return user
-//       }
-//     }),
-//     items: store.users.items.filter(item =>{
-//       if(ownProps.match.params.id === item.itemowner){
-//         return item
-//       }
-//     }),
-//     itemsBorrowed: store.users.items.filter(item =>{
-//       if(ownProps.match.params.id === item.borrower){
-//         return item
-//       }
-//     }).length
-//   }
-// }
-
-
 const fetchUser = gql`
   query fetchUser($id: ID!) {
     user(id: $id) {

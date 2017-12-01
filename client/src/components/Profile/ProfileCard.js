@@ -1,41 +1,38 @@
-import React, { Component } from 'react'
-import { Paper } from 'material-ui'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Paper } from 'material-ui';
+import PropTypes from 'prop-types';
 
-import { ProfilePic } from './index'
+import { ProfilePic } from './index';
+import './styles.css';
 
-import './styles.css'
-
-class ProfileCard extends Component {
-  render() {
-
-    const {userSelect, itemsShared, itemsBorrowed} = this.props
-
-    return (
-      <div className="profileHeader">
-        <Paper zDepth={1} style={{display: 'flex', padding: '50px 30px', flexWrap: 'wrap'}}>
-
-          <div className="userPersonalInfo">
-            <h1>{userSelect.fullname}</h1>
-            <p className="subtitle">{userSelect.bio}</p>
-          </div>
-
-          <div className="userOtherInfo">
-            <div className="userStat">
-              <h2>{itemsShared}</h2>
-              <h3 className="subtitle">Items shared</h3>
-              <h2>{itemsBorrowed}</h2>
-              <h3 className="subtitle">Items borrowed</h3>
-            </div>
-            <ProfilePic userSelect={userSelect}/>
-          </div>
-
-        </Paper>
-      </div>
-    )
-  }
+const style = {
+  display: 'flex', 
+  padding: '50px 30px', 
+  flexWrap: 'wrap'
 }
 
+const ProfileCard = ({userSelect, itemsShared, itemsBorrowed}) => (
+  <div className="profileHeader">
+    <Paper zDepth={1} style={style}>
+
+      <div className="userPersonalInfo">
+        <h1>{userSelect.fullname}</h1>
+        <p className="subtitle">{userSelect.bio}</p>
+      </div>
+
+      <div className="userOtherInfo">
+        <div className="userStat">
+          <h2>{itemsShared}</h2>
+          <h3 className="subtitle">Items shared</h3>
+          <h2>{itemsBorrowed}</h2>
+          <h3 className="subtitle">Items borrowed</h3>
+        </div>
+        <ProfilePic userSelect={userSelect}/>
+      </div>
+
+    </Paper>
+  </div>
+);
 
 ProfileCard.propTypes = {
   userSelect: PropTypes.object.isRequired,
@@ -43,5 +40,4 @@ ProfileCard.propTypes = {
   itemsBorrowed: PropTypes.number.isRequired
 }
 
-
-export default ProfileCard
+export default ProfileCard;

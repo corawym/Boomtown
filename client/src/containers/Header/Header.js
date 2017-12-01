@@ -28,7 +28,7 @@ class Header extends Component {
       <AppBar
         title="Title"
         iconElementLeft={ <Leftside filters={!loading?tags:[]}  handleChange={this.handleChange} filterSelected={filterSelected}/> }
-        iconElementRight={ <Rightside logOut={this.logOut} userID={user ? user.uid : false}/> }
+        iconElementRight={ <Rightside logOut={this.logOut} userID={user ? user.uid : ''}/> }
         style={{ backgroundColor: '#fff', maxWidth: '1140px', margin: '0 auto', boxShadow: 'none', padding: '0 10px', display:'flex', alignItems:'center', flexWrap:'wrap'}}
         iconStyleLeft={{ margin: '0'}}
         iconStyleRight={{ marginRight: '0'}}

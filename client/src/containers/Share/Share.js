@@ -82,7 +82,7 @@ class Share extends Component {
           shareCreated={this.props.shareCreated} 
           filterSelected={this.props.filterSelected}
           imageData={this.props.imageData}
-          user={!this.props.data.loading ? this.props.data.user : false} 
+          user={!this.props.data.loading ? this.props.data.user : {}} 
         />
         <Rightside 
           stepIndex={this.props.stepIndex} 

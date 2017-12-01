@@ -2,10 +2,8 @@ import React from 'react'
 import { CardTitle, CardText } from 'material-ui'
 import PropTypes from 'prop-types'
 
-
-
 const ItemContext = ({description, title, tags}) => {
-  const tagsArray = tags.reduce((acc,curr)=>{
+  const tagsArray = tags.reduce((acc, curr)=>{
     acc.push(curr.title);
     return acc
   },[])

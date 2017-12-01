@@ -1,24 +1,17 @@
-import React, { Component } from 'react'
-import Gravatar from 'react-gravatar'
-import PropTypes from 'prop-types'
+import React from 'react';
+import Gravatar from 'react-gravatar';
+import PropTypes from 'prop-types';
 
-class ProfilePic extends Component {
-
-  render() {
-    const {userSelect} = this.props
-
-    return (
-      <Gravatar 
-        email={userSelect.email} 
-        size={180}
-        style={{borderRadius:'50%', display: 'flex', justifyContent: 'center'}}
-      />
-    )
-  }
-}
+const ProfilePic = ({userSelect}) => (
+  <Gravatar 
+    email={userSelect.email} 
+    size={180}
+    style={{borderRadius:'50%', display: 'flex', justifyContent: 'center'}}
+  />
+);
 
 ProfilePic.propTypes = {
   userSelect: PropTypes.object.isRequired
 }
 
-export default ProfilePic
+export default ProfilePic;

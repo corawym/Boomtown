@@ -39,7 +39,6 @@ const config = {
 firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
-    console.log(user);
     if (user) {
         store.dispatch(loginSuccess(user));
     } else {
